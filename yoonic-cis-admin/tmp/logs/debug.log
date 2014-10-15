@@ -1,0 +1,565 @@
+2014-09-22 07:39:04 Debug: 
+2014-09-22 07:40:02 Debug: 
+2014-09-22 07:40:31 Debug: Array
+(
+    [id] => 1
+    [Role] => Admin
+)
+
+2014-09-22 07:40:31 Debug: Array
+(
+    [0] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 40
+                    [Role] => 3
+                    [FirstName] => Graham
+                    [LastName] => Fowke
+                    [username] => graham
+                    [emailId] => graham@syqic.com
+                    [password] => $2a$10$Xb8MIlvv.0slXySYB7E5de9Eg5.XxpRGg3Dk6XZ2XMdGixLH7oMO.
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-22 07:38:33
+                    [modified] => 2014-09-22 07:38:33
+                )
+
+            [Role] => Array
+                (
+                    [id] => 3
+                    [Role] => Telco_User
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [1] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 39
+                    [Role] => 1
+                    [FirstName] => E1admin
+                    [LastName] => E1admin
+                    [username] => e1admin
+                    [emailId] => e1admin@e1.sg
+                    [password] => $2a$10$i98.xyqOCO3iBsaozIUM9u2SezAqNZCImpDwftmdXN8cftcKAswK.
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:41:56
+                    [modified] => 2014-09-18 10:41:56
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [2] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 38
+                    [Role] => 1
+                    [FirstName] => Syqic
+                    [LastName] => Admin
+                    [username] => syqicadmin
+                    [emailId] => syqic@syqic.com
+                    [password] => $2a$10$yLa7RxSgpKSV6YhJci.hcOo3XnqdfDILnkwRXRuUe78LiMl3Xp.ey
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:41:10
+                    [modified] => 2014-09-18 10:41:10
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [3] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 37
+                    [Role] => 1
+                    [FirstName] => SHUM
+                    [LastName] => LIK
+                    [username] => shum
+                    [emailId] => shum@e1.sg
+                    [password] => $2a$10$X78P/9L.pu40hqUozn/S0uXCuwSputZVfH9ro5F.HQoA4I3JbN3ty
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:39:49
+                    [modified] => 2014-09-18 10:39:49
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+)
+
+2014-09-22 07:40:31 Debug: Array
+(
+    [0] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 40
+                    [Role] => 3
+                    [FirstName] => Graham
+                    [LastName] => Fowke
+                    [username] => graham
+                    [emailId] => graham@syqic.com
+                    [password] => $2a$10$Xb8MIlvv.0slXySYB7E5de9Eg5.XxpRGg3Dk6XZ2XMdGixLH7oMO.
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-22 07:38:33
+                    [modified] => 2014-09-22 07:38:33
+                )
+
+            [Role] => Array
+                (
+                    [id] => 3
+                    [Role] => Telco_User
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [1] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 39
+                    [Role] => 1
+                    [FirstName] => E1admin
+                    [LastName] => E1admin
+                    [username] => e1admin
+                    [emailId] => e1admin@e1.sg
+                    [password] => $2a$10$i98.xyqOCO3iBsaozIUM9u2SezAqNZCImpDwftmdXN8cftcKAswK.
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:41:56
+                    [modified] => 2014-09-18 10:41:56
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [2] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 38
+                    [Role] => 1
+                    [FirstName] => Syqic
+                    [LastName] => Admin
+                    [username] => syqicadmin
+                    [emailId] => syqic@syqic.com
+                    [password] => $2a$10$yLa7RxSgpKSV6YhJci.hcOo3XnqdfDILnkwRXRuUe78LiMl3Xp.ey
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:41:10
+                    [modified] => 2014-09-18 10:41:10
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [3] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 37
+                    [Role] => 1
+                    [FirstName] => SHUM
+                    [LastName] => LIK
+                    [username] => shum
+                    [emailId] => shum@e1.sg
+                    [password] => $2a$10$X78P/9L.pu40hqUozn/S0uXCuwSputZVfH9ro5F.HQoA4I3JbN3ty
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:39:49
+                    [modified] => 2014-09-18 10:39:49
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+)
+
+2014-09-22 07:41:03 Debug: 
+2014-09-22 07:41:46 Debug: 
+2014-10-07 03:10:06 Debug: Array
+(
+    [id] => 1
+    [Role] => Admin
+)
+
+2014-10-07 03:10:06 Debug: Array
+(
+    [0] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 39
+                    [Role] => 1
+                    [FirstName] => E1admin
+                    [LastName] => E1admin
+                    [username] => e1admin
+                    [emailId] => e1admin@e1.sg
+                    [password] => $2a$10$i98.xyqOCO3iBsaozIUM9u2SezAqNZCImpDwftmdXN8cftcKAswK.
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:41:56
+                    [modified] => 2014-09-18 10:41:56
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [1] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 38
+                    [Role] => 1
+                    [FirstName] => Syqic
+                    [LastName] => Admin
+                    [username] => syqicadmin
+                    [emailId] => syqic@syqic.com
+                    [password] => $2a$10$yLa7RxSgpKSV6YhJci.hcOo3XnqdfDILnkwRXRuUe78LiMl3Xp.ey
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:41:10
+                    [modified] => 2014-09-18 10:41:10
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [2] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 37
+                    [Role] => 1
+                    [FirstName] => SHUM
+                    [LastName] => LIK
+                    [username] => shum
+                    [emailId] => shum@e1.sg
+                    [password] => $2a$10$X78P/9L.pu40hqUozn/S0uXCuwSputZVfH9ro5F.HQoA4I3JbN3ty
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:39:49
+                    [modified] => 2014-09-18 10:39:49
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+)
+
+2014-10-07 03:10:06 Debug: Array
+(
+    [0] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 39
+                    [Role] => 1
+                    [FirstName] => E1admin
+                    [LastName] => E1admin
+                    [username] => e1admin
+                    [emailId] => e1admin@e1.sg
+                    [password] => $2a$10$i98.xyqOCO3iBsaozIUM9u2SezAqNZCImpDwftmdXN8cftcKAswK.
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:41:56
+                    [modified] => 2014-09-18 10:41:56
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [1] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 38
+                    [Role] => 1
+                    [FirstName] => Syqic
+                    [LastName] => Admin
+                    [username] => syqicadmin
+                    [emailId] => syqic@syqic.com
+                    [password] => $2a$10$yLa7RxSgpKSV6YhJci.hcOo3XnqdfDILnkwRXRuUe78LiMl3Xp.ey
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:41:10
+                    [modified] => 2014-09-18 10:41:10
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+    [2] => Array
+        (
+            [User] => Array
+                (
+                    [id] => 37
+                    [Role] => 1
+                    [FirstName] => SHUM
+                    [LastName] => LIK
+                    [username] => shum
+                    [emailId] => shum@e1.sg
+                    [password] => $2a$10$X78P/9L.pu40hqUozn/S0uXCuwSputZVfH9ro5F.HQoA4I3JbN3ty
+                    [contactno] => 
+                    [Telconame] => 1
+                    [IsActive] => 1
+                    [created] => 2014-09-18 10:39:49
+                    [modified] => 2014-09-18 10:39:49
+                )
+
+            [Role] => Array
+                (
+                    [id] => 1
+                    [Role] => Admin
+                )
+
+            [Isactive] => Array
+                (
+                    [id] => 1
+                    [IsActive] => YES
+                )
+
+            [Telconame] => Array
+                (
+                    [id] => 1
+                    [Telconame] => Maxis
+                )
+
+        )
+
+)
+
+2014-10-07 03:10:19 Debug: 

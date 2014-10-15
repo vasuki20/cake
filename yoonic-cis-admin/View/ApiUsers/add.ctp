@@ -1,0 +1,35 @@
+<div class="apiUsers form">
+<?php echo $this->Form->create('ApiUser');?>
+	<fieldset>
+		<legend><?php echo __('Add Api User'); ?></legend>
+	<?php
+		if($user["admin_role_id"]>0 and $user["admin_role_id"]<2):
+			echo $this->Form->input('admin_role_id', array("options"=>array("1"=>"Telco Admin","2"=>"Telco User"), "default"=>"1"));
+		elseif($user["admin_role_id"]==0):
+			echo $this->Form->input('admin_role_id', array("options"=>array("0"=>"Super Admin","1"=>"Telco Admin","2"=>"Telco User")));
+		endif;
+		
+		if($user["admin_role_id"]>0 and $user["admin_role_id"]<2):
+			echo $this->Form->input('telco_id', array("options"=>$telco, "default"=>$user["telco_id"]));
+		elseif($user["admin_role_id"]==0):
+			$telco[0]=array("0"=>"Yoonic");
+			echo $this->Form->input('telco_id', array("options"=>$telco, "default"=>0));
+		endif;
+		echo $this->Form->input('username');
+		echo $this->Form->input('password');
+		echo $this->Form->input('status', array("options"=>array("active"=>"Active", "inactive"=>"Inactive", "suspended"=>"Suspended")));
+		echo $this->Form->hidden('created_by', array("value"=>$user["id"]));
+		echo $this->Form->hidden('date_created', array("value"=>date("Y-m-d H:i:s")));
+		echo $this->Form->hidden('modified_by', array("value"=>$user["id"]));
+		echo $this->Form->hidden('date_modified', array("value"=>date("Y-m-d H:i:s")));
+	?>
+	</fieldset>
+<?php echo $this->Form->end(__('Submit'));?>
+</div>
+<div class="actions">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+
+		<li><?php echo $this->Html->link(__('List Api Users'), array('action' => 'index'));?></li>
+	</ul>
+</div>
