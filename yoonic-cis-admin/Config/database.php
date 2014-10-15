@@ -68,10 +68,10 @@ class DATABASE_CONFIG {
     public $default = array(
         'datasource' => 'Database/Mysql',
         'persistent' => false,
-        'host' => 'localhost',
-        'login' => 'yoonic_cis',
-        'password' => 'syqic2013',
-        'database' => 'yoonic_cis',
+        'host' => 'localhost:3306',
+        'login' => 'root',
+        'password' => '9659465874a',
+        'database' => 'registration',
         'prefix' => '',
             //'encoding' => 'utf8',
     );
