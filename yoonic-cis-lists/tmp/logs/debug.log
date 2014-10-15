@@ -1,0 +1,174 @@
+2014-10-15 17:07:09 Debug: 3
+2014-10-15 17:07:09 Debug: 1
+2014-10-15 17:08:01 Debug: 3
+2014-10-15 17:08:01 Debug: 
+2014-10-15 17:08:27 Debug: 3
+2014-10-15 17:08:27 Debug: 1
+2014-10-15 17:08:32 Debug: 3
+2014-10-15 17:08:32 Debug: 1
+2014-10-15 17:09:02 Debug: 3
+2014-10-15 17:09:02 Debug: 1
+2014-10-15 17:09:02 Debug: hi
+2014-10-15 17:09:02 Debug: Array
+(
+    [0] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 1
+                    [value] => 123123121
+                    [created] => 2014-10-15 16:46:11
+                )
+
+        )
+
+    [1] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 2
+                    [value] => 1231231231232
+                    [created] => 2014-10-15 16:53:02
+                )
+
+        )
+
+    [2] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 3
+                    [value] => 1
+                    [created] => 2014-10-15 16:54:30
+                )
+
+        )
+
+    [3] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 4
+                    [value] => 2
+                    [created] => 2014-10-15 16:54:35
+                )
+
+        )
+
+)
+
+2014-10-15 17:09:33 Debug: hi
+2014-10-15 17:09:33 Debug: Array
+(
+    [0] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 1
+                    [value] => 123123121
+                    [created] => 2014-10-15 16:46:11
+                )
+
+        )
+
+    [1] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 2
+                    [value] => 1231231231232
+                    [created] => 2014-10-15 16:53:02
+                )
+
+        )
+
+    [2] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 3
+                    [value] => 1
+                    [created] => 2014-10-15 16:54:30
+                )
+
+        )
+
+    [3] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 4
+                    [value] => 2
+                    [created] => 2014-10-15 16:54:35
+                )
+
+        )
+
+)
+
+2014-10-15 17:09:39 Debug: 3
+2014-10-15 17:09:39 Debug: 1
+2014-10-15 17:09:42 Debug: 3213123
+2014-10-15 17:09:42 Debug: 0
+2014-10-15 17:09:43 Debug: hi
+2014-10-15 17:09:43 Debug: Array
+(
+    [0] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 1
+                    [value] => 123123121
+                    [created] => 2014-10-15 16:46:11
+                )
+
+        )
+
+    [1] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 2
+                    [value] => 1231231231232
+                    [created] => 2014-10-15 16:53:02
+                )
+
+        )
+
+    [2] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 3
+                    [value] => 1
+                    [created] => 2014-10-15 16:54:30
+                )
+
+        )
+
+    [3] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 4
+                    [value] => 2
+                    [created] => 2014-10-15 16:54:35
+                )
+
+        )
+
+    [4] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 5
+                    [value] => 3213123
+                    [created] => 2014-10-15 17:09:42
+                )
+
+        )
+
+)
+
+2014-10-15 17:09:47 Debug: 3
+2014-10-15 17:09:47 Debug: 1
