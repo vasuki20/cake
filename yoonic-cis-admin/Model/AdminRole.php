@@ -7,10 +7,10 @@ App::uses('AppModel', 'Model');
  */
 class AdminRole extends AppModel {
 
-	$useTable = false;
+//	$useTable = false;
 	
 	public $_schema = array(
-		'id' => array('type'=>'numeric');
+		'id' => array('type'=>'numeric')
 	);
 
 }

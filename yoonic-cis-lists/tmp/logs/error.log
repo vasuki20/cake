@@ -2648,3 +2648,140 @@ Stack Trace:
 #1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
 #2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2014-10-16 02:02:13 Error: [MissingControllerException] Controller class PagesController could not be found.
+Exception Attributes: array (
+  'class' => 'PagesController',
+  'plugin' => NULL,
+)
+Request URL: /cake/yoonic-cis-lists/
+Stack Trace:
+#0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-16 02:02:48 Error: [MissingControllerException] Controller class WhitelistController could not be found.
+Exception Attributes: array (
+  'class' => 'WhitelistController',
+  'plugin' => NULL,
+)
+Request URL: /cake/yoonic-cis-lists/whitelist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-16 02:03:00 Error: [MissingActionException] Action ListsController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'index',
+)
+Request URL: /cake/yoonic-cis-lists/lists
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-16 02:03:13 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/whitelist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('white_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(24): PaginatorComponent->paginate('WhiteList')
+#8 [internal function]: ListsController->whitelist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 02:13:47 Error: [MissingControllerException] Controller class PagesController could not be found.
+Exception Attributes: array (
+  'class' => 'PagesController',
+  'plugin' => NULL,
+)
+Request URL: /cake/yoonic-cis-lists/
+Stack Trace:
+#0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-16 02:14:32 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/whitelist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('white_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(24): PaginatorComponent->paginate('WhiteList')
+#8 [internal function]: ListsController->whitelist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 02:34:49 Error: [MissingActionException] Action ListsController::whitelists() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'whitelists',
+)
+Request URL: /cake/yoonic-cis-lists/lists/whitelists
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-16 02:35:02 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/whitelist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('white_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(24): PaginatorComponent->paginate('WhiteList')
+#8 [internal function]: ListsController->whitelist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 02:49:30 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/whitelist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('white_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(24): PaginatorComponent->paginate('WhiteList')
+#8 [internal function]: ListsController->whitelist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
