@@ -2785,3 +2785,179 @@ Stack Trace:
 #11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
 #12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2014-10-16 04:29:37 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/blacklist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('black_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(37): PaginatorComponent->paginate('BlackList')
+#8 [internal function]: ListsController->blacklist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 04:42:53 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/blacklist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('black_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(37): PaginatorComponent->paginate('BlackList')
+#8 [internal function]: ListsController->blacklist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 07:08:12 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/blacklist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('black_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(37): PaginatorComponent->paginate('BlackList')
+#8 [internal function]: ListsController->blacklist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 07:29:52 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/blacklist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('black_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(37): PaginatorComponent->paginate('BlackList')
+#8 [internal function]: ListsController->blacklist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 08:03:35 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/blacklist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('black_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(37): PaginatorComponent->paginate('BlackList')
+#8 [internal function]: ListsController->blacklist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 08:23:23 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/blacklist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('black_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(37): PaginatorComponent->paginate('BlackList')
+#8 [internal function]: ListsController->blacklist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 08:23:59 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/blacklist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('black_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(37): PaginatorComponent->paginate('BlackList')
+#8 [internal function]: ListsController->blacklist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-10-16 08:48:59 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-lists/lists/blacklist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('black_lists')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2905): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(2877): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\cake\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#7 C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php(37): PaginatorComponent->paginate('BlackList')
+#8 [internal function]: ListsController->blacklist()
+#9 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ListsController), Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#11 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#12 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
