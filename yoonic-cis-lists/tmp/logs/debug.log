@@ -184,3 +184,260 @@
 2014-10-16 08:23:23 Debug: hi
 2014-10-16 08:23:59 Debug: hi
 2014-10-16 08:48:55 Debug: hi
+2014-10-17 07:05:32 Debug: hi
+2014-10-17 07:05:33 Debug: Array
+(
+    [0] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 1
+                    [value] => 9087656531
+                    [created] => 
+                )
+
+        )
+
+    [1] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 2
+                    [value] => 9087656532
+                    [created] => 
+                )
+
+        )
+
+    [2] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 3
+                    [value] => 9087656533
+                    [created] => 
+                )
+
+        )
+
+    [3] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 4
+                    [value] => 9087656534
+                    [created] => 
+                )
+
+        )
+
+    [4] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 5
+                    [value] => 9087656535
+                    [created] => 
+                )
+
+        )
+
+    [5] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 6
+                    [value] => 9087656536
+                    [created] => 
+                )
+
+        )
+
+    [6] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 7
+                    [value] => 9087656537
+                    [created] => 
+                )
+
+        )
+
+    [7] => Array
+        (
+            [WhiteList] => Array
+                (
+                    [id] => 8
+                    [value] => 9087656538
+                    [created] => 
+                )
+
+        )
+
+)
+
+2014-10-17 07:05:35 Debug: hi
+2014-10-17 07:05:35 Debug: Array
+(
+    [0] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 1
+                    [value] => 3434345
+                    [created] => 
+                )
+
+        )
+
+    [1] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 2
+                    [value] => 3434346
+                    [created] => 
+                )
+
+        )
+
+    [2] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 3
+                    [value] => 3434347
+                    [created] => 
+                )
+
+        )
+
+    [3] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 4
+                    [value] => 3434348
+                    [created] => 
+                )
+
+        )
+
+    [4] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 5
+                    [value] => 3434349
+                    [created] => 
+                )
+
+        )
+
+    [5] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 6
+                    [value] => 3434343
+                    [created] => 
+                )
+
+        )
+
+    [6] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 7
+                    [value] => 3434340
+                    [created] => 
+                )
+
+        )
+
+)
+
+2014-10-17 07:05:37 Debug: hi
+2014-10-17 07:05:37 Debug: Array
+(
+    [0] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 1
+                    [value] => 3434345
+                    [created] => 
+                )
+
+        )
+
+    [1] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 2
+                    [value] => 3434346
+                    [created] => 
+                )
+
+        )
+
+    [2] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 3
+                    [value] => 3434347
+                    [created] => 
+                )
+
+        )
+
+    [3] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 4
+                    [value] => 3434348
+                    [created] => 
+                )
+
+        )
+
+    [4] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 5
+                    [value] => 3434349
+                    [created] => 
+                )
+
+        )
+
+    [5] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 6
+                    [value] => 3434343
+                    [created] => 
+                )
+
+        )
+
+    [6] => Array
+        (
+            [BlackList] => Array
+                (
+                    [id] => 7
+                    [value] => 3434340
+                    [created] => 
+                )
+
+        )
+
+)
+
