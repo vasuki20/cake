@@ -134,7 +134,6 @@ class ListsController extends AppController {
             return $this->redirect(array('action' => 'blacklist'));
         }
     }
-    
     public function blacklistadd() {
         if ($this->request->is('post')) {
             $this->BlackList->create();
