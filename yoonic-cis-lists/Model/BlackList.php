@@ -8,6 +8,13 @@ App::uses('AppModel', 'Model');
  * and open the template in the editor.
  */
 class BlackList extends AppModel {
+    public function isValueExists($value){
+        $this->log("inside isvalue:".$value, 'debug');
+        $blackListIdCount=$this->find('count',
+                    array('conditions' => array('value' => $value))
+                    );
+        return $blackListIdCount;
+    }
    
 }
 

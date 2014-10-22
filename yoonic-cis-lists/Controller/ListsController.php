@@ -78,11 +78,10 @@ class ListsController extends AppController {
     
     public function whitelistadd() {
         if ($this->request->is('post')) {
+            $this->log($this->request->data, 'debug');
             $this->WhiteList->create();
             $this->log($this->request->data['WhiteList']['value'], 'debug');
-            $blackListIdCount=$this->BlackList->find('count',
-                    array('conditions' => array('value' => $this->request->data['WhiteList']['value']))
-                    );
+            $blackListIdCount=$this->BlackList->isValueExists($this->request->data['WhiteList']['value']);
             $this->log($blackListIdCount, 'debug');
             if ($blackListIdCount!=1) {
                 if ($this->WhiteList->save($this->request->data)) {
