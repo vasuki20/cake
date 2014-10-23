@@ -4641,3 +4641,624 @@ Request URL: /cake/yoonic-cis-lists/css/images/bg.png
 Stack Trace:
 #0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-10-23 01:59:54 Error: Fatal Error (1): Call to undefined method ListsController::whitelistfilter() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 28]
+2014-10-23 01:59:54 Error: [FatalErrorException] Call to undefined method ListsController::whitelistfilter()
+Request URL: /cake/yoonic-cis-lists/lists/whitelist
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 28, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 28, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 02:00:26 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:00:27 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:00:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /cake/yoonic-cis-lists/css/images/bg.png
+Stack Trace:
+#0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-23 02:00:33 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:00:33 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:00:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /cake/yoonic-cis-lists/css/images/bg.png
+Stack Trace:
+#0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-23 02:30:26 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:30:26 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:30:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /cake/yoonic-cis-lists/css/images/bg.png
+Stack Trace:
+#0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-23 02:30:36 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 87]
+2014-10-23 02:30:36 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 02:31:52 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:31:52 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:31:58 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 87]
+2014-10-23 02:31:58 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 02:32:55 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 88]
+2014-10-23 02:32:55 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 88)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 88, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 88, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 02:35:51 Error: [MissingViewException] View file "C:\xampp\htdocs\cake\yoonic-cis-lists\View\Lists\is_value_exists.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\cake\\yoonic-cis-lists\\View\\Lists\\is_value_exists.ctp',
+)
+Request URL: /cake/yoonic-cis-lists/lists/isValueExists
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-23 02:36:15 Error: [MissingControllerException] Controller class WhitelistaddController could not be found.
+Exception Attributes: array (
+  'class' => 'WhitelistaddController',
+  'plugin' => NULL,
+)
+Request URL: /cake/yoonic-cis-lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-23 02:36:22 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:36:22 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 02:36:23 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /cake/yoonic-cis-lists/css/images/bg.png
+Stack Trace:
+#0 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-10-23 02:36:28 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 89]
+2014-10-23 02:36:28 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 89, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:11:00 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 87]
+2014-10-23 03:11:00 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:12:44 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 87]
+2014-10-23 03:12:44 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:13:46 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 87]
+2014-10-23 03:13:46 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:13:50 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 87]
+2014-10-23 03:13:50 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:18:56 Error: Fatal Error (1): Call to undefined function isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 87]
+2014-10-23 03:18:56 Error: [FatalErrorException] Call to undefined function isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 87, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:24:45 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR) in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 87]
+2014-10-23 03:24:45 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 87)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 87, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 87, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:24:59 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:24:59 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:25:14 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:25:14 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:25:20 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:25:20 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:25:22 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:25:22 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:25:51 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:25:51 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:26:01 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:26:01 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:27:21 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:27:21 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:27:31 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:27:31 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:27:52 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:27:53 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:29:09 Error: Fatal Error (1): Call to undefined method ListsController::isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 81]
+2014-10-23 03:29:09 Error: [FatalErrorException] Call to undefined method ListsController::isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:29:30 Error: Fatal Error (1): Call to undefined method ListsController::isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 81]
+2014-10-23 03:29:30 Error: [FatalErrorException] Call to undefined method ListsController::isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:29:35 Error: Fatal Error (1): Call to undefined method ListsController::isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 81]
+2014-10-23 03:29:35 Error: [FatalErrorException] Call to undefined method ListsController::isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:29:51 Error: Fatal Error (1): Call to undefined method ListsController::isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 81]
+2014-10-23 03:29:51 Error: [FatalErrorException] Call to undefined method ListsController::isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:29:55 Error: Fatal Error (1): Call to undefined method ListsController::isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 81]
+2014-10-23 03:29:55 Error: [FatalErrorException] Call to undefined method ListsController::isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:31:11 Error: Fatal Error (1): Call to undefined method ListsController::isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 81]
+2014-10-23 03:31:11 Error: [FatalErrorException] Call to undefined method ListsController::isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:35:08 Error: Fatal Error (1): Call to undefined method ListsController::isValueExists() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Controller\ListsController.php, line 81]
+2014-10-23 03:35:08 Error: [FatalErrorException] Call to undefined method ListsController::isValueExists()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 81, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:40:08 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:40:08 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:40:12 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:40:12 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:40:16 Error: Fatal Error (1): Call to undefined function find() in [C:\xampp\htdocs\cake\yoonic-cis-lists\Model\BlackList.php, line 13]
+2014-10-23 03:40:16 Error: [FatalErrorException] Call to undefined function find()
+Request URL: /cake/yoonic-cis-lists/lists/whitelistadd
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\xampp\\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\cake\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-10-23 03:41:05 Error: [MissingActionException] Action ListsController::script.js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'script.js',
+)
+Request URL: /cake/yoonic-cis-lists/lists/script.js
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-10-23 03:41:05 Error: [MissingActionException] Action ListsController::styles.css() could not be found.
+Exception Attributes: array (
+  'controller' => 'ListsController',
+  'action' => 'styles.css',
+)
+Request URL: /cake/yoonic-cis-lists/lists/styles.css
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ListsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cake\yoonic-cis-lists\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

@@ -28,7 +28,6 @@ $query1 = "SELECT * FROM `subscriptions` WHERE(`keyword`='$BAW' OR `keyword`='$P
 //$fpath = "/home/yoonic/www/yoonic-cis-utils/logs/";
 $fpath = "/var/www/html/yoonic-utils/logs/";
 
-
 $con = mysqli_connect( $dbhost, $dbuser, $dbpassword, $dbname );
 
 echo "begin \n";
@@ -350,10 +349,6 @@ function atomic_put_contents($filename, $data)
 	    }
 	    fclose($fp);
 	}	
-
- 
- 
-    
- 
+       
 
 ?>

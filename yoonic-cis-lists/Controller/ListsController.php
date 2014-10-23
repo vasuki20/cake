@@ -1,5 +1,6 @@
 <?php
 
+
 App::uses('AppController', 'Controller');
 // We need to load the class
 
@@ -10,7 +11,6 @@ App::uses('AppController', 'Controller');
  */
 
 class ListsController extends AppController {
-
     public $components = array('Paginator', 'Session');
     public $helpers = array('Html', 'Form');
     public $uses = array('WhiteList','BlackList'); // use this when model and controller name are different
@@ -25,7 +25,7 @@ class ListsController extends AppController {
         $this->set('Lists', $data);
         //$data=$this->WhiteList->find('all');
      //   $this->log($data, 'debug');
-        $this-> whitelistfilter();
+       
        
     }
     
@@ -77,14 +77,8 @@ class ListsController extends AppController {
     
     public function whitelistadd() {
         if ($this->request->is('post')) {
-            $this->WhiteList->create();
-            
-           
-        //    $this->log($this->request->data['WhiteList']['value'], 'debug');
-            $blackListIdCount=$this->BlackList->find('count',
-                    array('conditions' => array('value' => $this->request->data['WhiteList']['value']))
-                    );
-           // $this->log($blackListIdCount, 'debug');
+            $this->WhiteList->create();                      
+            $blackListIdCount=$this->BlackList->isValueExists($this->request->data['WhiteList']['value']);
             if ($blackListIdCount!=1) {
                 if ($this->WhiteList->save($this->request->data)) {
                     $this->Session->setFlash(__('Your User has been saved.'));
@@ -145,22 +139,7 @@ class ListsController extends AppController {
             $this->Session->setFlash(__('Unable to add your User.'));
         }
     } 
-    public function whitelistfilter(){
-       $blackListIdCount=$this->BlackList->find('count',
-                    array('conditions' => array('value' => $this->request->data['WhiteList']['value']))
-                    );
-        $this->log($blackListIdCount, 'debug');
-       if ($blackListIdCount!=1) {
-                
-                    return 0;
-                }
-            
-            else
-            {
-                return 1;
-            }   
-       
-    }
+    
     
 }
 
