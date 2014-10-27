@@ -457,3 +457,75 @@ Request URL: /cake/yoonic-cis-admin/css/images/bg.png
 Stack Trace:
 #0 /var/www/html/cake/yoonic-cis-admin/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-10-16 02:03:43 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-admin/users/login
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('users')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1357): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#6 C:\xampp\htdocs\cake\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#7 C:\xampp\htdocs\cake\yoonic-cis-admin\View\Users\login.ctp(3): FormHelper->create('User')
+#8 C:\xampp\htdocs\cake\lib\Cake\View\View.php(948): include('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\cake\lib\Cake\View\View.php(910): View->_evaluate('C:\xampp\htdocs...', Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\View\View.php(471): View->_render('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#12 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#13 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 C:\xampp\htdocs\cake\yoonic-cis-admin\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-10-16 02:04:32 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-admin/users/login
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('users')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1357): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#6 C:\xampp\htdocs\cake\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#7 C:\xampp\htdocs\cake\yoonic-cis-admin\View\Users\login.ctp(3): FormHelper->create('User')
+#8 C:\xampp\htdocs\cake\lib\Cake\View\View.php(948): include('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\cake\lib\Cake\View\View.php(910): View->_evaluate('C:\xampp\htdocs...', Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\View\View.php(471): View->_render('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#12 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#13 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 C:\xampp\htdocs\cake\yoonic-cis-admin\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-10-16 02:13:21 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'Selected driver is not enabled',
+  'enabled' => false,
+)
+Request URL: /cake/yoonic-cis-admin/users/login
+Stack Trace:
+#0 C:\xampp\htdocs\cake\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#1 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3482): ConnectionManager::getDataSource('default')
+#2 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1128): Model->setDataSource('default')
+#3 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(3504): Model->setSource('users')
+#4 C:\xampp\htdocs\cake\lib\Cake\Model\Model.php(1357): Model->getDataSource()
+#5 C:\xampp\htdocs\cake\lib\Cake\View\Helper\FormHelper.php(215): Model->schema()
+#6 C:\xampp\htdocs\cake\lib\Cake\View\Helper\FormHelper.php(468): FormHelper->_introspectModel('User', 'fields')
+#7 C:\xampp\htdocs\cake\yoonic-cis-admin\View\Users\login.ctp(3): FormHelper->create('User')
+#8 C:\xampp\htdocs\cake\lib\Cake\View\View.php(948): include('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\cake\lib\Cake\View\View.php(910): View->_evaluate('C:\xampp\htdocs...', Array)
+#10 C:\xampp\htdocs\cake\lib\Cake\View\View.php(471): View->_render('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\cake\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#12 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#13 C:\xampp\htdocs\cake\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#14 C:\xampp\htdocs\cake\yoonic-cis-admin\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
