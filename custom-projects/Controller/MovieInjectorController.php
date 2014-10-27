@@ -9,82 +9,96 @@ App::uses('AppController', 'Controller');
  */
 class MovieInjectorController extends AppController {
 
-    var $uses = array('Vod_Tbl', 'Channel_Tbl', 'Channel_Txl_Tbl', 'Movie', 'Vod_Details_Tbl', 'Vod_Xltn_Tbl');
+    var $uses = array('Vod_Tbl', 'Channel_Tbl', 'Channel_Txl_Tbl', 'Movie', 'Vod_Details_Tbl', 'Vod_Xltn_Tbl', 'Channel');
 
     public function injectMovies() {
         $this->autoRender = false;
-        $id_results = $this->getMovieList();
-        $this->log('injectMovies', 'debug');
-        foreach ($id_results as $id_result) {
-            $id = $id_result['Vod_Tbl']['syqic_movie_id'];
-//            print_r($id);
-            $channelTblArray = $this->getChannelTbl($id);
-            print_r("<br>");
-            print_r($channelTblArray);
+        $channel_results = $this->getChannels();
+//        print_r($channel_results);
+        foreach ($channel_results as $channel_result) {
+            echo '<br>';
+//            print_r($channel_result);
+            if ($channel_result['Channel']['id']) {
+                $id_results = $this->getMovieList($channel_result['Channel']['syqic_channel']);
+                $this->log('injectMovies', 'debug');
+                foreach ($id_results as $id_result) {
+                    $id = $id_result['Vod_Tbl']['syqic_movie_id'];
+                    $vodTblArray = $this->getVodTbl($id);
+                    $count = $this->isDuplicate($channel_result['Channel']['id'], $vodTblArray[0]['Vod_Tbl']['movie_title']);
+                    if ($count == 0) {
+                        $vodDetailsTblArray = $this->getVodDetailsTbl($id);
+                        $vodXltnTblArray = $this->getVodXlTbl($id);
+                        $description='-';
+                        $language='-';
+                        if($vodXltnTblArray[0]['Vod_Xltn_Tbl']['description'])
+                            $description=$vodXltnTblArray[0]['Vod_Xltn_Tbl']['description'];
+                        if($vodXltnTblArray[0]['Vod_Xltn_Tbl']['language'])
+                            $language=$vodXltnTblArray[0]['Vod_Xltn_Tbl']['language'];
+                        
+                        $this->Movie->Create();
+                        $insert_data = array("Movie" => array(
+                                "sub_category_id" => $id,
+                                "category_id" => $channel_result['Channel']['category_id'],
+                                "bundle_id" => $channel_result['Channel']['bundleid'],
+                                "channel_id" => $channel_result['Channel']['id'],
+                                "cp" => "JJJ",
+                                "telco_region" => "Maxis",
+                                "title" => $vodTblArray[0]['Vod_Tbl']['movie_title'],
+                                "image_thumb" => $vodTblArray[0]['Vod_Tbl']['image_thumb'],
+                                "abr" => $vodTblArray[0]['Vod_Tbl']['abr_url'],
+                                "rtsp_1" => $vodTblArray[0]['Vod_Tbl']['rtsp_low_bitrate'],
+                                "rtsp_2" => $vodTblArray[0]['Vod_Tbl']['rtsp_high_bitrate'],
+                                "type" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['category'],
+                                "director" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['director'],
+                                "cast" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['cast'],
+                                "genre" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['genre'],
+                                "subtitle" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['subtitle'],
+                                "duration" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['duration'],
+                                "description" => $description,
+                                "language" => $language,
+                                "credit" => '-',
+                                "tag" => '-'
+                            )
+                        );
+                        echo '<br><br>';
+                        print_r($insert_data);
 
-            if ($channelTblArray[0]['Channel_Tbl']['channel_id']) {
-                $vodTblArray = $this->getVodTbl($id);
-//            print_r($vodTblArray);
-                $vodDetailsTblArray = $this->getVodDetailsTbl($id);
-//            print_r($vodDetailsTblArray);
-
-                $vodXltnTblArray = $this->getVodXlTbl($id);
-//            print_r($vodXltnTblArray);
-                $this->Movie->Create();
-                $insert_data = array("Movie" => array(
-                        "sub_category_id" => $id,
-                        "category_id" => $channelTblArray[0]['Channel_Tbl']['category_id'],
-                        "bundle_id" => $channelTblArray[0]['Channel_Tbl']['bundle_id'],
-                        "channel_id" => $channelTblArray[0]['Channel_Tbl']['channel_id'],
-                        "cp" => "JJJ",
-                        "telco_region" => "Maxis",
-                        "title" => $vodTblArray[0]['Vod_Tbl']['movie_title'],
-                        "image_thumb" => $vodTblArray[0]['Vod_Tbl']['image_thumb'],
-                        "abr" => $vodTblArray[0]['Vod_Tbl']['abr_url'],
-                        "rtsp_1" => $vodTblArray[0]['Vod_Tbl']['rtsp_low_bitrate'],
-                        "rtsp_2" => $vodTblArray[0]['Vod_Tbl']['rtsp_high_bitrate'],
-                        "type" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['category'],
-                        "director" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['director'],
-                        "cast" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['cast'],
-                        "genre" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['genre'],
-                        "subtitle" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['subtitle'],
-                        "duration" => $vodDetailsTblArray[0]['Vod_Details_Tbl']['duration'],
-                        "description" => $vodXltnTblArray[0]['Vod_Xltn_Tbl']['description'],
-                        "language" => $vodXltnTblArray[0]['Vod_Xltn_Tbl']['language'],
-                        "credit" => '-',
-                        "tag" => '-'
-                    )
-                );
-                echo '<br><br>';
-                print_r($insert_data);
-
-                if ($this->Movie->save($insert_data)) {
-                    $this->Session->setFlash(__('Your User has been saved.'));
+                        if ($this->Movie->save($insert_data)) {
+                            print_r("Inserted Succesfully<br>");
+                        }
+                        else
+                        {
+                            print_r("Insert failed<br>");
+                        }
+                    } else {
+                        print_r("Duplicate Channel ID. So Skipping.....<br>");
+                    }
                 }
             } else {
                 print_r("Empty Channel ID. So Skipping.....");
-                print_r($insert_data);
             }
         }
     }
 
-    private function getMovieList() {
+    private function getChannels() {
+        $channel_results = $this->Channel->find('all', array(
+            'fields' => array('id', 'bundleid', 'category_id', 'syqic_channel')
+                )
+        );
+        return $channel_results;
+    }
+
+    private function getMovieList($channelDir) {
         $id_results = $this->Vod_Tbl->find('all', array(
-            'fields' => array('syqic_movie_id')
+            'fields' => array('syqic_movie_id'),
+            'conditions' => array(
+                array('channel_dir' => $channelDir)
+            )
                 )
         );
         return $id_results;
     }
 
-    private function getChannelTbl($id) {
-        $channel_results = $this->Channel_Tbl->find('all', array(
-            'fields' => array('channel_id', 'category_id', 'bundle_id', 'content_type'),
-            'conditions' => array(
-                array('syqic_channel_id' => $id),
-            )
-        ));
-        return $channel_results;
-    }
 
     private function getVodTbl($id) {
         $vod_results = $this->Vod_Tbl->find('all', array(
@@ -116,6 +130,17 @@ class MovieInjectorController extends AppController {
             )
         ));
         return $vod_xltn_results;
+    }
+
+    private function isDuplicate($channelId, $title) {
+        $count = $this->Movie->find('count', array(
+            'conditions' => array(
+                array('channel_id' => $channelId),
+                array('title' => $title),
+                array('published' => '0'),
+            )
+        ));
+        return $count;
     }
 
 }
