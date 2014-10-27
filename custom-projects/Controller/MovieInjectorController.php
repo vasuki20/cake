@@ -8,7 +8,7 @@ App::uses('AppController', 'Controller');
  * @property Report $Report
  */
 class MovieInjectorController extends AppController {
-
+    
     var $uses = array('Vod_Tbl', 'Channel_Tbl', 'Channel_Txl_Tbl', 'Movie', 'Vod_Details_Tbl', 'Vod_Xltn_Tbl');
 
     public function injectMovies() {
@@ -20,7 +20,7 @@ class MovieInjectorController extends AppController {
 //            print_r($id);
             $channelTblArray = $this->getChannelTbl($id);
             print_r("<br>");
-            print_r($channelTblArray);
+//            print_r($channelTblArray);
 
             if ($channelTblArray[0]['Channel_Tbl']['channel_id']) {
                 $vodTblArray = $this->getVodTbl($id);
@@ -29,7 +29,7 @@ class MovieInjectorController extends AppController {
 //            print_r($vodDetailsTblArray);
 
                 $vodXltnTblArray = $this->getVodXlTbl($id);
-//            print_r($vodXltnTblArray);
+            print_r($vodXltnTblArray);
                 $this->Movie->Create();
                 $insert_data = array("Movie" => array(
                         "sub_category_id" => $id,
@@ -61,7 +61,8 @@ class MovieInjectorController extends AppController {
                 if ($this->Movie->save($insert_data)) {
                     $this->Session->setFlash(__('Your User has been saved.'));
                 }
-            } else {
+            } 
+            else {
                 print_r("Empty Channel ID. So Skipping.....");
                 print_r($insert_data);
             }
@@ -78,7 +79,7 @@ class MovieInjectorController extends AppController {
 
     private function getChannelTbl($id) {
         $channel_results = $this->Channel_Tbl->find('all', array(
-            'fields' => array('channel_id', 'category_id', 'bundle_id', 'content_type'),
+            'fields' => array('channel_id', 'category_id', 'bundle_id', 'syqic_channel'),
             'conditions' => array(
                 array('syqic_channel_id' => $id),
             )
