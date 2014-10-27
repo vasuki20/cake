@@ -1,6 +1,5 @@
 <?php
 
-
 App::uses('AppController', 'Controller');
 // We need to load the class
 
@@ -11,36 +10,37 @@ App::uses('AppController', 'Controller');
  */
 
 class ListsController extends AppController {
+
     public $components = array('Paginator', 'Session');
     public $helpers = array('Html', 'Form');
     public $uses = array('WhiteList','BlackList'); // use this when model and controller name are different
-  
+
     public function whitelist() {
 
-     //  $this->log('hi', 'debug');
+        $this->log('hi', 'debug');
         $this->Paginator->settings = array(
             'limit' => 10
         );
         $data = $this->Paginator->paginate('WhiteList');
         $this->set('Lists', $data);
         //$data=$this->WhiteList->find('all');
-     //   $this->log($data, 'debug');
-       
-       
+        $this->log($data, 'debug');
+
     }
     
-    public function blacklist() {    
+    public function blacklist() {
 
-   //     $this->log('hi', 'debug');
+        $this->log('hi', 'debug');
         $this->Paginator->settings = array(
             'limit' => 10
         );
         $data = $this->Paginator->paginate('BlackList');
         $this->set('Lists', $data);
-     //   $this->log($data, 'debug');
+        $this->log($data, 'debug');
 
     }
-      
+    
+    
     public function whitelistedit($id = null) {
         $data = $this->WhiteList->findById($id);
         if (!$data) {
@@ -62,7 +62,7 @@ class ListsController extends AppController {
     }
 
     public function whitelistdelete($id) {
-    //    print_r('Inside delete');
+        print_r('Inside delete');
         if ($this->request->is('get')) {
             throw new MethodNotAllowedException();
         }
@@ -75,10 +75,14 @@ class ListsController extends AppController {
         }
     }
     
+    
     public function whitelistadd() {
         if ($this->request->is('post')) {
-            $this->WhiteList->create();                      
+            $this->log($this->request->data, 'debug');
+            $this->WhiteList->create();
+            $this->log($this->request->data['WhiteList']['value'], 'debug');
             $blackListIdCount=$this->BlackList->isValueExists($this->request->data['WhiteList']['value']);
+            $this->log($blackListIdCount, 'debug');
             if ($blackListIdCount!=1) {
                 if ($this->WhiteList->save($this->request->data)) {
                     $this->Session->setFlash(__('Your User has been saved.'));
@@ -94,6 +98,9 @@ class ListsController extends AppController {
             $this->Session->setFlash(__('Unable to add your User.'));
         }
     }
+
+    
+    
     
     public function blacklistedit($id = null) {
         $data = $this->BlackList->findById($id);
@@ -128,19 +135,19 @@ class ListsController extends AppController {
             return $this->redirect(array('action' => 'blacklist'));
         }
     }
+    
+    
     public function blacklistadd() {
         if ($this->request->is('post')) {
             $this->BlackList->create();
-          //  $this->log($this->request->data, 'debug');
+            $this->log($this->request->data, 'debug');
             if ($this->BlackList->save($this->request->data)) {
                 $this->Session->setFlash(__('Your User has been saved.'));
                 return $this->redirect(array('action' => 'blacklist'));
             }
             $this->Session->setFlash(__('Unable to add your User.'));
         }
-    } 
-    
-    
+    }
 }
 
 ?>

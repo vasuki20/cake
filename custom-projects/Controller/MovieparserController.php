@@ -1,39 +1,48 @@
 <?php
+
 App::uses('AppController', 'Controller');
-// We need to load the class
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Reports Controller
+ *
+ * @property Report $Report
  */
-
 class MovieparserController extends AppController {
-    
-    public function parse(){
-         $this->autoRender = false;
-         ini_set('max_execution_time', 900);
- $url = 'https://54.254.131.243/secureapi/contentLibrary/moviesAndChannels/lastDump';
 
-$username = 'api-content-user';
-$password = 'y00n1cc0ntent';
+    public function parse() {
+        $this->autoRender = false;
+        $url = 'https://54.254.131.243/secureapi/contentLibrary/moviesAndChannels/lastDump';
+        //ini_set('max_execution_time', 900);
 
+        $username = 'api-content-uer';
+        $password = 'y00n1cc0ntent';
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        echo 'hi';
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 900);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 900);
+        
+        $json = curl_exec($ch);
+        echo $json;
+        $errmsg = curl_error($ch);
+        echo $errmsg;
+        $cInfo = curl_getinfo($ch);
+        echo $cInfo;
+        curl_close($ch);
 
-$json = curl_exec($ch);
-if(curl_errno($ch)){
-    echo 'Request Error:' . curl_error($ch);
-}
-curl_close($ch);
-
-$data = json_decode($json, true);
+        $data = json_decode($json, true);
+        
+        
+        $arr = array('Channel_Table' => array('Title' => 'Kathi', 'Id' => 'Kathi', 'asvgdh' => 'Kathi'));
+        echo '<br>';
+        print_r($arr);
+        echo '<br>after data';
     }
+
 }
 ?>
-
 
