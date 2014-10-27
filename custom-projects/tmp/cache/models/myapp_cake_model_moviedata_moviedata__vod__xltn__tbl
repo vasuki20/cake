@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 1414392682
+=======
+1414337938
+>>>>>>> e8e58a9ce80b739fd6a2bf51829d1784e2976cac
 a:6:{s:6:"tbl_id";a:6:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:255;s:8:"unsigned";b:0;s:3:"key";s:7:"primary";}s:14:"syqic_movie_id";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:255;s:8:"unsigned";b:0;}s:5:"title";a:6:{s:4:"type";s:4:"text";s:4:"null";b:0;s:7:"default";N;s:6:"length";N;s:7:"collate";s:17:"latin1_swedish_ci";s:7:"charset";s:6:"latin1";}s:8:"language";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:255;s:7:"collate";s:17:"latin1_swedish_ci";s:7:"charset";s:6:"latin1";}s:11:"description";a:6:{s:4:"type";s:4:"text";s:4:"null";b:0;s:7:"default";N;s:6:"length";N;s:7:"collate";s:17:"latin1_swedish_ci";s:7:"charset";s:6:"latin1";}s:8:"new_date";a:4:{s:4:"type";s:8:"datetime";s:4:"null";b:0;s:7:"default";s:19:"0000-00-00 00:00:00";s:6:"length";N;}}

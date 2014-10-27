@@ -8,7 +8,11 @@ App::uses('AppController', 'Controller');
  * @property Report $Report
  */
 class MovieInjectorController extends AppController {
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> e8e58a9ce80b739fd6a2bf51829d1784e2976cac
     var $uses = array('Vod_Tbl', 'Channel_Tbl', 'Channel_Txl_Tbl', 'Movie', 'Vod_Details_Tbl', 'Vod_Xltn_Tbl');
 
     public function injectMovies() {
@@ -20,7 +24,11 @@ class MovieInjectorController extends AppController {
 //            print_r($id);
             $channelTblArray = $this->getChannelTbl($id);
             print_r("<br>");
+<<<<<<< HEAD
 //            print_r($channelTblArray);
+=======
+            print_r($channelTblArray);
+>>>>>>> e8e58a9ce80b739fd6a2bf51829d1784e2976cac
 
             if ($channelTblArray[0]['Channel_Tbl']['channel_id']) {
                 $vodTblArray = $this->getVodTbl($id);
@@ -29,7 +37,11 @@ class MovieInjectorController extends AppController {
 //            print_r($vodDetailsTblArray);
 
                 $vodXltnTblArray = $this->getVodXlTbl($id);
+<<<<<<< HEAD
             print_r($vodXltnTblArray);
+=======
+//            print_r($vodXltnTblArray);
+>>>>>>> e8e58a9ce80b739fd6a2bf51829d1784e2976cac
                 $this->Movie->Create();
                 $insert_data = array("Movie" => array(
                         "sub_category_id" => $id,
@@ -61,8 +73,12 @@ class MovieInjectorController extends AppController {
                 if ($this->Movie->save($insert_data)) {
                     $this->Session->setFlash(__('Your User has been saved.'));
                 }
+<<<<<<< HEAD
             } 
             else {
+=======
+            } else {
+>>>>>>> e8e58a9ce80b739fd6a2bf51829d1784e2976cac
                 print_r("Empty Channel ID. So Skipping.....");
                 print_r($insert_data);
             }
@@ -79,7 +95,11 @@ class MovieInjectorController extends AppController {
 
     private function getChannelTbl($id) {
         $channel_results = $this->Channel_Tbl->find('all', array(
+<<<<<<< HEAD
             'fields' => array('channel_id', 'category_id', 'bundle_id', 'syqic_channel'),
+=======
+            'fields' => array('channel_id', 'category_id', 'bundle_id', 'content_type'),
+>>>>>>> e8e58a9ce80b739fd6a2bf51829d1784e2976cac
             'conditions' => array(
                 array('syqic_channel_id' => $id),
             )

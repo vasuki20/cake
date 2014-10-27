@@ -64,7 +64,11 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost:3307',
 		'login' => 'root',
+<<<<<<< HEAD
 		'password' => 'root',
+=======
+		'password' => '9659465874a',
+>>>>>>> e8e58a9ce80b739fd6a2bf51829d1784e2976cac
 		'database' => 'yoonic',
 		'prefix' => '',
 		//'encoding' => 'utf8',
@@ -73,9 +77,15 @@ class DATABASE_CONFIG {
 	public $moviedata = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
+<<<<<<< HEAD
 		'host' => 'localhost:3307',
 		'login' => 'root',
 		'password' => 'root',
+=======
+		'host' => 'localhost:3306',
+		'login' => 'root',
+		'password' => '9659465874a',
+>>>>>>> e8e58a9ce80b739fd6a2bf51829d1784e2976cac
 		'database' => 'moviedata',
 		'prefix' => '',
 		//'encoding' => 'utf8',
