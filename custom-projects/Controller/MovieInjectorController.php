@@ -24,17 +24,26 @@ class MovieInjectorController extends AppController {
                 foreach ($id_results as $id_result) {
                     $id = $id_result['Vod_Tbl']['syqic_movie_id'];
                     $vodTblArray = $this->getVodTbl($id);
+                   // print_r($vodTblArray);
                     $count = $this->isDuplicate($channel_result['Channel']['id'], $vodTblArray[0]['Vod_Tbl']['movie_title']);
-                    if ($count == 0) {
+       
+                    print_r($count);
+                    echo '<br>';
+                    print_r($channel_result['Channel']['id']);
+                    echo '<br>';
+                    print_r($vodTblArray[0]['Vod_Tbl']['movie_title']);
+                    echo '<br>';
+                  //   foreach ($count as $getcount) {          
+                    if ($count[0] == 0) {
                         $vodDetailsTblArray = $this->getVodDetailsTbl($id);
                         $vodXltnTblArray = $this->getVodXlTbl($id);
-                        $description='-';
-                        $language='-';
-                        if($vodXltnTblArray[0]['Vod_Xltn_Tbl']['description'])
-                            $description=$vodXltnTblArray[0]['Vod_Xltn_Tbl']['description'];
-                        if($vodXltnTblArray[0]['Vod_Xltn_Tbl']['language'])
-                            $language=$vodXltnTblArray[0]['Vod_Xltn_Tbl']['language'];
-                        
+                        $description = '-';
+                        $language = '-';
+                        if ($vodXltnTblArray[0]['Vod_Xltn_Tbl']['description'])
+                            $description = $vodXltnTblArray[0]['Vod_Xltn_Tbl']['description'];
+                        if ($vodXltnTblArray[0]['Vod_Xltn_Tbl']['language'])
+                            $language = $vodXltnTblArray[0]['Vod_Xltn_Tbl']['language'];
+  /*retriving information from moviedata to movies */
                         $this->Movie->Create();
                         $insert_data = array("Movie" => array(
                                 "sub_category_id" => $id,
@@ -45,6 +54,7 @@ class MovieInjectorController extends AppController {
                                 "telco_region" => "Maxis",
                                 "title" => $vodTblArray[0]['Vod_Tbl']['movie_title'],
                                 "image_thumb" => $vodTblArray[0]['Vod_Tbl']['image_thumb'],
+                                "published" => $vodTblArray[0]['Vod_Tbl']['published'],
                                 "abr" => $vodTblArray[0]['Vod_Tbl']['abr_url'],
                                 "rtsp_1" => $vodTblArray[0]['Vod_Tbl']['rtsp_low_bitrate'],
                                 "rtsp_2" => $vodTblArray[0]['Vod_Tbl']['rtsp_high_bitrate'],
@@ -61,8 +71,8 @@ class MovieInjectorController extends AppController {
                             )
                         );
                         echo '<br><br>';
-                        print_r($insert_data);
-
+                     //   print_r($insert_data);
+  /* inserting the retrived data to movies table */
                         if ($this->Movie->save($insert_data)) {
                             print_r("Inserted Succesfully<br>");
                         }
@@ -99,11 +109,10 @@ class MovieInjectorController extends AppController {
         return $id_results;
     }
 
-
     private function getVodTbl($id) {
         $vod_results = $this->Vod_Tbl->find('all', array(
             'fields' => array('syqic_movie_id', 'channel_dir', 'movie_title', 'bundle_id',
-                'image_thumb', 'abr_url', 'rtsp_low_bitrate', 'rtsp_high_bitrate', 'channel_id'),
+                'image_thumb', 'abr_url', 'rtsp_low_bitrate', 'rtsp_high_bitrate', 'channel_id','published'),
             'conditions' => array(
                 array('syqic_movie_id' => $id),
             )
