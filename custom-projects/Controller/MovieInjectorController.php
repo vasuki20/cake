@@ -24,15 +24,17 @@ class MovieInjectorController extends AppController {
                 foreach ($id_results as $id_result) {
                     $id = $id_result['Vod_Tbl']['syqic_movie_id'];
                     $vodTblArray = $this->getVodTbl($id);
+                    print_r($vodTblArray);
+                    print_r($vodTblArray[0]['Vod_Tbl']['movie_title']);
                    // print_r($vodTblArray);
                     $count = $this->isDuplicate($channel_result['Channel']['id'], $vodTblArray[0]['Vod_Tbl']['movie_title']);
-       
-                    print_r($count);
-                    echo '<br>';
-                    print_r($channel_result['Channel']['id']);
-                    echo '<br>';
-                    print_r($vodTblArray[0]['Vod_Tbl']['movie_title']);
-                    echo '<br>';
+//       
+//                    print_r($count);
+//                    echo '<br>';
+//                    print_r($channel_result['Channel']['id']);
+//                    echo '<br>';
+//                  //  print_r($vodTblArray[0]['Vod_Tbl']['movie_title']);
+//                    echo '<br>';
                   //   foreach ($count as $getcount) {          
                     if ($count[0] == 0) {
                         $vodDetailsTblArray = $this->getVodDetailsTbl($id);
@@ -115,6 +117,7 @@ class MovieInjectorController extends AppController {
                 'image_thumb', 'abr_url', 'rtsp_low_bitrate', 'rtsp_high_bitrate', 'channel_id','published'),
             'conditions' => array(
                 array('syqic_movie_id' => $id),
+                array('published' => '0')
             )
         ));
         return $vod_results;
