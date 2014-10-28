@@ -13,22 +13,24 @@ class MovieInjectorController extends AppController {
 
     public function injectMovies() {
         $this->autoRender = false;
-        $channel_results = $this->getChannels();
-//        print_r($channel_results);
+        $channel_results = $this->getChannels();//retriving data from Channels table(yoonic)
+        $count1=0;
+        $count2=0;     
         foreach ($channel_results as $channel_result) {
-            echo '<br>';
-//            print_r($channel_result);
+            $count1++;
             if ($channel_result['Channel']['id']) {
-                $id_results = $this->getMovieList($channel_result['Channel']['syqic_channel']);
-                $this->log('injectMovies', 'debug');
+                $id_results = $this->getMovieList($channel_result['Channel']['syqic_channel']);//retriving syqic movie id  from Vod_tbl
+               // print_r($id_results);
+               // $this->log('injectMovies', 'debug');
                 foreach ($id_results as $id_result) {
                     $id = $id_result['Vod_Tbl']['syqic_movie_id'];
                     echo '<br>';
-                    echo $id;
+                  //  echo $id;
                     $vodTblArray = $this->getVodTbl($id);
-                    print_r($vodTblArray);
+                   // print_r($vodTblArray);
                     $count = $this->isDuplicate($channel_result['Channel']['id'], $vodTblArray[0]['Vod_Tbl']['movie_title']);
                     if ($count == 0) {
+                        $count2++;
                         $vodDetailsTblArray = $this->getVodDetailsTbl($id);
                         $vodXltnTblArray = $this->getVodXlTbl($id);
                         $description = '-';
@@ -72,7 +74,8 @@ class MovieInjectorController extends AppController {
                         } else {
                             print_r("Insert failed<br>");
                         }
-                    } else {
+                    } 
+                    else {
                         print_r("Duplicate Channel ID. So Skipping.....<br>");
                     }
                 }
@@ -80,6 +83,8 @@ class MovieInjectorController extends AppController {
                 print_r("Empty Channel ID. So Skipping.....<br>");
             }
         }
+                print_r('<br>Inner Count->'.$count1);
+		print_r('<br>Outer Count->'.$count2);
     }
 
     private function getChannels() {
@@ -135,18 +140,19 @@ class MovieInjectorController extends AppController {
     }
 
     private function isDuplicate($channelId, $title) {
-        echo '<br><br> Channel Id and Title<br>';
-        print_r($channelId);
-        print_r($title);
+       // echo '<br><br> Channel Id and Title<br>';
+       // print_r($channelId);
+       // print_r($title);
         $count = $this->Movie->find('count', array(
             'conditions' => array(
                 array('channel_id' => $channelId),
                 array('title' => $title),
-                array('published' => '0'),
+              //  array('published' => '0'),
             )
         ));
         return $count;
     }
+    
 
 }
 
