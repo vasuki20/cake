@@ -1,19 +1,9 @@
 <?php
 
-
-App::uses('AppController', 'Controller');
-require_once 'Google/Client.php';
-require_once 'Google/Service/YouTube.php';
-session_start();
-
-/**
- * Reports Controller
- *
- * @property Report $Report
- */
-class RetriveChannelController extends AppController {
 // Call set_include_path() as needed to point to your client library.
-
+require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+session_start();
 
 /*
  * You can acquire an OAuth 2.0 client ID and client secret from the
@@ -109,10 +99,3 @@ END;
     <?=$htmlBody?>
   </body>
 </html>
-
-
-
-
-}
-?>
-
