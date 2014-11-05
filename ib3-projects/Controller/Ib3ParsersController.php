@@ -9,12 +9,12 @@ App::uses('AppController', 'Controller');
  */
 class Ib3ParsersController extends AppController {
 
-    var $uses = array('searchvideos');
+    var $uses = array('Searchvideo');
 
     public function index() {
 
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once '/Applications/XAMPP/xamppfiles/htdocs/testYouTube/google-api-php-client-master/src/Google/Client.php';
+        require_once '/Applications/XAMPP/xamppfiles/htdocs/testYouTube/google-api-php-client-master/src/Google/Service/YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
@@ -38,58 +38,41 @@ class Ib3ParsersController extends AppController {
             'maxResults' => $this->request->data['maxResults'],
         ));
 
-        $result = $searchResponse . getModelData();
-
-
-        print_r($result);
 
 
         $videos = '';
         $channels = '';
         $playlists = '';
 
-
         // Add each result to the appropriate list, and then display the lists of
         // matching videos, channels, and playlists.
         foreach ($searchResponse as $searchResult) {
-
-            $model = $searchResult['modelData:protected'];
-
-
-            print_r($model);
-//       $this->Searchvideo->create();
-//        $this->Searchvideo->save(
-//                array(
-//                    'kind' => $searchResult['kind'],
-//                    'etag' => $searchResult['etag'],
-//                    'id_kind' => 'youtube#channel',
-//                    'videoId' => $searchResult['id'][videoId],
-//                    
-//                )
-//        );
-            //   print_r($kind);
-
-            $result = $searchResult['snippet']['title'];
-
-
-
-
-
-            switch ($searchResult['snippet']['title']) {
-                case 'youtube#video':
-                    $videos .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'], $searchResult['id']['videoId']);
-                    break;
-
-
-                //print_r(youtube#video);
-
-
-                case 'youtube#channel':
-                    $channels .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'], $searchResult['id']['channelId']);
-                    break;
-                case 'youtube#playlist':
-                    $playlists .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'], $searchResult['id']['playlistId']);
-                    break;
+            print_r($searchResult['snippet']['channelId']);
+            echo '<br>';
+            print_r($searchResult['snippet']['title']);
+            echo '<br>';
+            print_r($searchResult['snippet']['description']);
+            echo '<br>';
+            print_r($searchResult['snippet']['publishedAt']);
+            echo '<br>';
+            print_r($searchResult['snippet']['channelTitle']);
+            echo '<br>';
+            echo '<br>';
+            echo '<br>';
+            echo '<br>';
+            $this->Searchvideo->Create();
+            $insert_data = array("Searchvideo" => array(
+                    "channelId" => $searchResult['snippet']['channelId'],
+                    "title" => $searchResult['snippet']['title"'],
+                    "description" => $searchResult['snippet']['description'],
+                    "publishedAt" => $searchResult['snippet']['publishedAt'],
+                    "channelTitle" => $searchResult['snippet']['channelTitle']
+                )
+            );
+            if ($this->Searchvideo->save($insert_data)) {
+                print_r("Inserted Succesfully<br>");
+            } else {
+                print_r("Insert failed<br>");
             }
         }
     }
