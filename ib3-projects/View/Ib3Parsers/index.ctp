@@ -1,5 +1,5 @@
 <?php
-echo $this->Form->create('User');
+echo $this->Form->create();
 echo $this->Form->input('search',array(
     'id'=>'q',
     'name'=> 'q',
@@ -8,11 +8,13 @@ echo $this->Form->input('search',array(
 echo $this->Form->input('number', array(
     'id'=>'maxResults',
     'name'=>'maxResults',
-    'min'=>1,
+    'min'=> 1,
     'max'=>50,
     'step'=>1,
     'value'=>25
     
 ));
-echo $this->Form->end('Save');
+echo $this->Form->end('Submit');
+
+
 ?>
