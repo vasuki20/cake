@@ -13,8 +13,8 @@ class Ib3ParsersController extends AppController {
 
     public function index() {
 
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once '/Applications/XAMPP/xamppfiles/htdocs/testYouTube/google-api-php-client-master/src/Google/Client.php';
+        require_once '/Applications/XAMPP/xamppfiles/htdocs/testYouTube/google-api-php-client-master/src/Google/Service/YouTube.php';
 
 
         /*
@@ -33,35 +33,32 @@ class Ib3ParsersController extends AppController {
         //print_r($youtube);
         // Call the search.list method to retrieve results matching the specified
         // query term.
+//        $videoDefinition="high";
+        if ($this->request->data && $this->request->data['q'] && $this->request->data['maxResults']) {
+            $searchResponse = $youtube->search->listSearch('id,snippet', array(
+                'q' => $this->request->data['q'],
+                'maxResults' => $this->request->data['maxResults'],
+//                'videoDefinition' => 'standard'
+                    //  print_r($searchResponse);
+            ));
 
-        $searchResponse = $youtube->search->listSearch('id,snippet', array(
-            'q' => $this->request->data['q'],
-            'maxResults' => $this->request->data['maxResults'],
-            
-          //  print_r($searchResponse);
-    
-        ));
-       
-     //   $videoFeed = $youtube->getVideoFeed($searchResponse);
-        
-     //   $url = 'http://gdata.youtube.com/feeds/standardfeeds/top_rated?time=today';
-     //   $videoFeed = $youtube->getVideoFeed($url);
-              
-     //   print_r($videoFeed);
+            //   $videoFeed = $youtube->getVideoFeed($searchResponse);
+            //   $url = 'http://gdata.youtube.com/feeds/standardfeeds/top_rated?time=today';
+            //   $videoFeed = $youtube->getVideoFeed($url);
+            //   print_r($videoFeed);
+                print_r($searchResponse);
 
-   //    print_r($searchResponse);
-        
-        
-        $videos = '';
-        $channels = '';
-        $playlists = '';
-       
-        
-        // Add each result to the appropriate list, and then display the lists of
-        // matching videos, channels, and playlists.
-        foreach ($searchResponse as $searchResult) {
-            
-             $url = 'https://www.youtube.com/watch?v=';
+
+            $videos = '';
+            $channels = '';
+            $playlists = '';
+
+
+            // Add each result to the appropriate list, and then display the lists of
+            // matching videos, channels, and playlists.
+            foreach ($searchResponse as $searchResult) {
+
+                $url = 'https://www.youtube.com/watch?v=';
 //            print_r($searchResult['kind']);
 //            echo '<br>';
 //            print_r($searchResult['etag']);
@@ -94,33 +91,38 @@ class Ib3ParsersController extends AppController {
 //            echo '<br>';
 //            echo '<br>';
 //            echo '<br>';
-            $videoId = $searchResult['id']['videoId'];
-             $videoURL = ($url);
-             //print_r($videoId);
-             $constructURL = $videoURL . $videoId; 
-         //    print_r($constructURL);
-           //  print_r($videoURL);
-            $this->Searchvideo->Create();
-            $insert_data = array("Searchvideo" => array(
-                    "kind" => $searchResult['kind'],
-                    "etag" => $searchResult['etag'],                   
-                    "id_videoId" => $searchResult['id']['videoId'],
-                    "channelId" => $searchResult['snippet']['channelId'],
-                    "title" => $searchResult['snippet']['title'],
-                    "description" => $searchResult['snippet']['description'],
-                    "thumbnails_default" => $searchResult['snippet']['thumbnails']['default']['url'],
-                    "thumbnails_medium" => $searchResult['snippet']['thumbnails']['medium']['url'],
-                    "thumbnails_high" => $searchResult['snippet']['thumbnails']['high']['url'],
-                  //"publishedAt" => $searchResult['snippet']['publishedAt'],
-                    "channelTitle" => $searchResult['snippet']['channelTitle'],
-                    "video_url" => $constructURL
-                )
-            );
-            if ($this->Searchvideo->save($insert_data)) {
-                print_r("Inserted Succesfully<br>");
-            } else {
-                print_r("Insert failed<br>");
+                $videoId = $searchResult['id']['videoId'];
+                $videoURL = ($url);
+                //print_r($videoId);
+                $constructURL = $videoURL . $videoId;
+                //    print_r($constructURL);
+                //  print_r($videoURL);
+                $this->Searchvideo->Create();
+                $insert_data = array("Searchvideo" => array(
+                        "kind" => $searchResult['kind'],
+                        "etag" => $searchResult['etag'],
+                        "id_videoId" => $searchResult['id']['videoId'],
+                        "channelId" => $searchResult['snippet']['channelId'],
+                        "title" => $searchResult['snippet']['title'],
+                        "description" => $searchResult['snippet']['description'],
+                        "thumbnails_default" => $searchResult['snippet']['thumbnails']['default']['url'],
+                        "thumbnails_medium" => $searchResult['snippet']['thumbnails']['medium']['url'],
+                        "thumbnails_high" => $searchResult['snippet']['thumbnails']['high']['url'],
+                        //"publishedAt" => $searchResult['snippet']['publishedAt'],
+                        "channelTitle" => $searchResult['snippet']['channelTitle'],
+                        "video_url" => $constructURL
+                    )
+                );
+                if ($this->Searchvideo->save($insert_data)) {
+                    print_r("Inserted Succesfully<br>");
+                } else {
+                    print_r("Insert failed<br>");
+                }
             }
+        }
+        else
+        {
+            $this->Session->setFlash('Please Enter the KeyWord and Max Results');
         }
     }
 

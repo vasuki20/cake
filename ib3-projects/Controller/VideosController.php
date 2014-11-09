@@ -34,20 +34,15 @@ class VideosController extends AppController {
         // Call the search.list method to retrieve results matching the specified
         // query term.
 //        $videoDefinition="high";
-        $videoDefinition="standard";
-        if ($this->request->data && $this->request->data['q'] && $this->request->data['maxResults']) {
+        if ($this->request->data['maxResults']) {
 //            $searchResponse = $youtube->search->listSearch('id,snippet', array(
 //                'q' => $this->request->data['q'],
 //                'maxResults' => $this->request->data['maxResults'],
 //                'videoDefinition' => $videoDefinition
 //                    //  print_r($searchResponse);
 //            ));
-            $searchResponse = $youtube->search->listSearch('id,snippet', array(
-                'type' => 'video',
-                'q' => $this->request->data['q'],
-                'location' => $this->request->data['location'],
-                'locationRadius' => $this->request->data['locationRadius'],
-                'maxResults' => $this->request->data['maxResults'],
+            $searchResponse = $youtube->videos->listVideos('id,snippet,contentDetails', array(
+                'id' => 'KwDPtD7k-KA'
             ));
 
             //   $videoFeed = $youtube->getVideoFeed($searchResponse);
