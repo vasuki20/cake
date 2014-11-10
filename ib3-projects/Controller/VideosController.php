@@ -13,9 +13,8 @@ class VideosController extends AppController {
 
     public function index() {
 
-        require_once '/Applications/XAMPP/xamppfiles/htdocs/testYouTube/google-api-php-client-master/src/Google/Client.php';
-        require_once '/Applications/XAMPP/xamppfiles/htdocs/testYouTube/google-api-php-client-master/src/Google/Service/YouTube.php';
-
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
@@ -41,7 +40,7 @@ class VideosController extends AppController {
 //                'videoDefinition' => $videoDefinition
 //                    //  print_r($searchResponse);
 //            ));
-            $searchResponse = $youtube->videos->listVideos('id,snippet,contentDetails', array(
+            $searchResponse = $youtube->videos->listVideos('id,snippet', array(
                 'id' => 'KwDPtD7k-KA'
             ));
 

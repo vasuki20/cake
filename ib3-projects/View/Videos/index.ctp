@@ -14,17 +14,17 @@ echo $this->Form->input('number', array(
     'value'=>25
     
 ));
-echo $this->Form->input('text', array(
-    'id'=>'location',
-    'name'=>'location',
-    'placeholder'=> "37.42307,-122.08427"
-));
-
-echo $this->Form->input('text', array(
-    'id'=>'locationRadius',
-    'name'=>'locationRadius',
-    'placeholder'=> "5km"
-));
+//echo $this->Form->input('text', array(
+//    'id'=>'location',
+//    'name'=>'location',
+//    'placeholder'=> "37.42307,-122.08427"
+//));
+//
+//echo $this->Form->input('text', array(
+//    'id'=>'locationRadius',
+//    'name'=>'locationRadius',
+//    'placeholder'=> "5km"
+//));
      
 echo $this->Form->end('Submit');
 
