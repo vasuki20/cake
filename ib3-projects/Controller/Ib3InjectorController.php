@@ -17,6 +17,8 @@ class Ib3InjectorController extends AppController {
         $id_results = $this->getVodDetailsTbl(); //retriving video details from vod_detail tbl
         $count1 = 0;
         $count2 = 0;
+        $filePath = 'C:\xampp\htdocs\injector_log\log.txt';
+        $file = fopen($filePath, "a");
         foreach ($id_results as $id_result) {
             $count1++;
             $id = $id_result['Vod_Detail']['id_videoId'];
@@ -53,22 +55,19 @@ class Ib3InjectorController extends AppController {
                     )
                 );
                 echo '<br><br>';
-// print_r($insert_data);
-
                 if ($this->Movie->save($insert_data)) {
                     print_r("Inserted Succesfully<br>");
-                    $this->injectorLog('C:\xampp\htdocs\injector_log\log.txt', "Inserted Succesfully<br>");
+                    $this->injectorLog($file, $id, "Inserted Succesfully" . "\r\n");
                 } else {
                     print_r("Insert failed<br>");
+                    $this->injectorLog($file, $id, "Insert failed" . "\r\n");
                 }
             } else {
-                print_r("Duplicate Channel ID. So Skipping.....<br>");
-
-                $this->injectorLog('C:\xampp\htdocs\injector_log\log.txt', "Duplicate Channel ID. So Skipping.....<br>");
+                // print_r("Duplicate Channel ID. So Skipping.....<br>");
+                //   echo "<br>---Duplicate ; ---$row_dup[0]";
+                $this->injectorLog($file, $id, "Duplicate Video ID. So Skipping...." . "\r\n");
             }
         }
-
-
         print_r('<br>Inner Count->' . $count1);
         print_r('<br>Outer Count->' . $count2);
     }
@@ -92,14 +91,10 @@ class Ib3InjectorController extends AppController {
         return $count;
     }
 
-    public function injectorLog($fp, $data) {
-        // Copied largely from http://php.net/manual/en/function.flock.php
-        //$this->log($this->request->$fp, 'debug');
-        if (flock($fp, LOCK_EX)) {
-            fwrite($fp, $data);
-            flock($fp, LOCK_UN);
-        }
-        fclose($fp);
+    public function injectorLog($file, $id, $data) {
+        $str = "[" . date("Y/m/d h:i:s", time()) . "] " . ' ' . $id . '-->' . $data;
+        fwrite($file, $str . "\n");
+        // fclose($file);
     }
 
 }
