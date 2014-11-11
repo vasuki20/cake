@@ -17,6 +17,8 @@ class Ib3InjectorController extends AppController {
         $id_results = $this->getVodDetailsTbl(); //retriving video details from vod_detail tbl
         $count1 = 0;
         $count2 = 0;
+        $filePath='C:\xampp\htdocs\injector_log\log.txt';
+        $file=fopen($filePath, "a");
         foreach ($id_results as $id_result) {
             $count1++;
             $id = $id_result['Vod_Detail']['id_videoId'];
@@ -57,14 +59,14 @@ class Ib3InjectorController extends AppController {
 
                 if ($this->Movie->save($insert_data)) {
                     print_r("Inserted Succesfully<br>");
-                    $this->injectorLog('C:\xampp\htdocs\injector_log\log.txt', "Inserted Succesfully<br>");
+                    $this->injectorLog($file, "Inserted Succesfully<br>");
                 } else {
                     print_r("Insert failed<br>");
                 }
             } else {
                 print_r("Duplicate Channel ID. So Skipping.....<br>");
 
-                $this->injectorLog('C:\xampp\htdocs\injector_log\log.txt', "Duplicate Channel ID. So Skipping.....<br>");
+                $this->injectorLog($file, "Duplicate Channel ID. So Skipping.....<br>");
             }
         }
 
@@ -92,14 +94,11 @@ class Ib3InjectorController extends AppController {
         return $count;
     }
 
-    public function injectorLog($fp, $data) {
+    public function injectorLog($file, $data) {
         // Copied largely from http://php.net/manual/en/function.flock.php
         //$this->log($this->request->$fp, 'debug');
-        if (flock($fp, LOCK_EX)) {
-            fwrite($fp, $data);
-            flock($fp, LOCK_UN);
-        }
-        fclose($fp);
+        fwrite($file, $data);
+        fclose($file);
     }
 
 }
