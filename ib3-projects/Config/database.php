@@ -70,13 +70,13 @@ class DATABASE_CONFIG {
 		//'encoding' => 'utf8',
 	);
 
-	public $moviedata = array(
+	public $injector = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost:3307',
 		'login' => 'root',
 		'password' => 'root',
-		'database' => 'moviedata',
+		'database' => 'ib3media',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

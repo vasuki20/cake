@@ -130,3 +130,7 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
 include_once('endpoints.php');
+CakeLog::config('custom_path', array(
+    'engine' => 'File',
+    'path' => 'C:\xampp\htdocs\injector_log'
+));
