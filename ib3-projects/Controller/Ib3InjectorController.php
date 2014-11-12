@@ -20,7 +20,10 @@ class Ib3InjectorController extends AppController {
         $filePath = 'C:\xampp\htdocs\injector_log\log.txt';
         $file = fopen($filePath, "a");
         foreach ($id_results as $id_result) {
+            //  print_r($id_result);
             $count1++;
+            $duration = $id_result['Vod_Detail']['duration'];
+            print_r($duration);
             $id = $id_result['Vod_Detail']['id_videoId'];
             //  print_r($id);
             $count = $this->isDuplicate($id); //checking duplication with videoId
@@ -47,7 +50,7 @@ class Ib3InjectorController extends AppController {
                         "cast" => '-',
                         "genre" => '-',
                         "subtitle" => '-',
-                        "duration" => '-',
+                        "duration" => $id_result['Vod_Detail']['duration'],
                         "description" => $id_result['Vod_Detail']['description'],
                         "language" => 'english',
                         "credit" => '-',
@@ -74,7 +77,7 @@ class Ib3InjectorController extends AppController {
 
     private function getVodDetailsTbl() {
         $vod_details_results = $this->Vod_Detail->find('all', array(
-            'fields' => array('id_videoId', 'channelId', 'title', 'description', 'thumbnails_medium', 'channelTitle', 'video_url', 'published'),
+            'fields' => array('id_videoId', 'channelId', 'title', 'description', 'thumbnails_medium', 'channelTitle', 'video_url', 'published', 'duration'),
         ));
         return $vod_details_results;
     }

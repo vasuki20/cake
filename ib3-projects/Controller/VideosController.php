@@ -40,8 +40,8 @@ class VideosController extends AppController {
 //                'videoDefinition' => $videoDefinition
 //                    //  print_r($searchResponse);
 //            ));
-            $searchResponse = $youtube->videos->listVideos('id,snippet', array(
-                'id' => 'KwDPtD7k-KA'
+            $searchResponse = $youtube->videos->listVideos('id,snippet,contentDetails,status,statistics,player,recordingDetails', array(
+                'id' => 'Lm8p5rlrSkY'
             ));
 
             //   $videoFeed = $youtube->getVideoFeed($searchResponse);

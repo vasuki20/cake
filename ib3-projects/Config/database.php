@@ -80,4 +80,15 @@ class DATABASE_CONFIG {
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
+        
+        public $video = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost:3307',
+		'login' => 'root',
+		'password' => 'root',
+		'database' => 'ib3_fetch',
+		'prefix' => '',
+		//'encoding' => 'utf8',
+	);
 }
