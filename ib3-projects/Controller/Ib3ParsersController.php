@@ -37,32 +37,48 @@ class Ib3ParsersController extends AppController {
             $searchResponse = $youtube->search->listSearch('id,snippet', array(
                 'q' => $this->request->data['q'],
                 'maxResults' => $this->request->data['maxResults'],
+              //  'c' => $this->request->data['c'],
 //                'videoDefinition' => 'standard'
             ));
-
+            
+          
+            
+          //  print_r($searchResponse);
+            
+//         if ($this->request->data && $this->request->data['q'] && $this->request->data['maxResults']) {
+//            $searchResponse = $youtube->search->listSearch('part="snippet", type="channel", q="display name"', array(
+//                'q' => $this->request->data['q'],
+//                'maxResults' => $this->request->data['maxResults'],
+//              //  'c' => $this->request->data['c'],
+////                'videoDefinition' => 'standard'
+//            ));
             //    print_r($searchResponse);
 //   $videoFeed = $youtube->getVideoFeed($searchResponse);
 //   $url = 'http://gdata.youtube.com/feeds/standardfeeds/top_rated?time=today';
 //   $videoFeed = $youtube->getVideoFeed($url);
 //   print_r($videoFeed);
             //     print_r($searchResponse);
-
-
             $videos = '';
             $channels = '';
             $playlists = '';
 
-
 // Add each result to the appropriate list, and then display the lists of
 // matching videos, channels, and playlists.
             foreach ($searchResponse as $searchResult) {
-                // print_r($searchResult);
+                 //print_r($searchResult);
                 $videoID = $searchResult['id']['videoId'];
+              //  $channelId = $searchResult['snippet']['channelId'];
+                $channelTitle = $searchResult['snippet']['channelTitle'];
+                print_r($channelTitle);
                 //  print_r($videoID);
-                $durationResults = $this->durationResponse($videoID); // extracting duration from Video API
-                foreach ($durationResults as $durationResult) {
-                    
-                    $convertMin = $durationResult['contentDetails']['duration'];
+                $videoResults = $this->videoList($videoID); // extracting duration from Video API
+                foreach ($videoResults as $videoResult) {
+                //print_r($videoResult); 
+                  // $channelId = $videoResult['snippet']['channelId']; 
+                  // print_r($channelId);
+                  // $channelTitle = $videoResult['snippet']['channelTitle']; 
+                  // print_r($channelTitle);
+                    $convertMin = $videoResult['contentDetails']['duration'];
                     $convertMins = $this->covtime($convertMin);
                  //  print_r($convertMins);
                     // print_r($durationResults);
@@ -124,7 +140,6 @@ class Ib3ParsersController extends AppController {
                             )
                         );
 
-
                         if ($this->Vod_Detail->save($insert_data)) {
                             print_r("Inserted Succesfully<br>");
                         } else {
@@ -135,13 +150,16 @@ class Ib3ParsersController extends AppController {
                     }
                 }
             }
-        } else {
+       } 
+        else {
             $this->Session->setFlash('Please Enter the KeyWord and Max Results');
         }
     }
 
-    private function durationResponse($videoId) {
-        //print_r($videoId);
+    private function videoList($videoID) {
+     //   print_r($videoID);
+//        print_r($channelId);
+//        print_r($channelTitle);
         require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
         require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
 
@@ -159,9 +177,11 @@ class Ib3ParsersController extends AppController {
         $youtube = new Google_Service_YouTube($client);
 
         $searchResponse = $youtube->videos->listVideos('id,snippet,contentDetails', array(
-            'id' => $videoId
+            'id' => $videoID
+//            'channelTitle'=> $channelId,
+//            'channelId'=> $channelTitle
         ));
-        // print_r($searchResponse);
+      //   print_r($searchResponse);
         return $searchResponse;
     }
     
