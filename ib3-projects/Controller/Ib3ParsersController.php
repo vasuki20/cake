@@ -13,8 +13,8 @@ class Ib3ParsersController extends AppController {
 
     public function index() {
 
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
@@ -43,7 +43,7 @@ class Ib3ParsersController extends AppController {
             
           
             
-          //  print_r($searchResponse);
+           print_r($searchResponse);
             
 //         if ($this->request->data && $this->request->data['q'] && $this->request->data['maxResults']) {
 //            $searchResponse = $youtube->search->listSearch('part="snippet", type="channel", q="display name"', array(
@@ -160,8 +160,8 @@ class Ib3ParsersController extends AppController {
      //   print_r($videoID);
 //        print_r($channelId);
 //        print_r($channelTitle);
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
