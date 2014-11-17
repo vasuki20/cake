@@ -13,8 +13,8 @@ class Ib3ParsersController extends AppController {
 
     public function index() {
 
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
@@ -37,14 +37,11 @@ class Ib3ParsersController extends AppController {
             $searchResponse = $youtube->search->listSearch('id,snippet', array(
                 'q' => $this->request->data['q'],
                 'maxResults' => $this->request->data['maxResults'],
-              //  'c' => $this->request->data['c'],
+                    //  'c' => $this->request->data['c'],
 //                'videoDefinition' => 'standard'
             ));
-            
-          
-            
-           print_r($searchResponse);
-            
+            print_r($searchResponse);
+
 //         if ($this->request->data && $this->request->data['q'] && $this->request->data['maxResults']) {
 //            $searchResponse = $youtube->search->listSearch('part="snippet", type="channel", q="display name"', array(
 //                'q' => $this->request->data['q'],
@@ -65,22 +62,18 @@ class Ib3ParsersController extends AppController {
 // Add each result to the appropriate list, and then display the lists of
 // matching videos, channels, and playlists.
             foreach ($searchResponse as $searchResult) {
-                 //print_r($searchResult);
+                //print_r($searchResult);
                 $videoID = $searchResult['id']['videoId'];
-              //  $channelId = $searchResult['snippet']['channelId'];
+                //  $channelId = $searchResult['snippet']['channelId'];
                 $channelTitle = $searchResult['snippet']['channelTitle'];
                 print_r($channelTitle);
                 //  print_r($videoID);
                 $videoResults = $this->videoList($videoID); // extracting duration from Video API
                 foreach ($videoResults as $videoResult) {
-                //print_r($videoResult); 
-                  // $channelId = $videoResult['snippet']['channelId']; 
-                  // print_r($channelId);
-                  // $channelTitle = $videoResult['snippet']['channelTitle']; 
-                  // print_r($channelTitle);
+                   
                     $convertMin = $videoResult['contentDetails']['duration'];
                     $convertMins = $this->covtime($convertMin);
-                 //  print_r($convertMins);
+                    //  print_r($convertMins);
                     // print_r($durationResults);
                     $count = $this->isDuplicate($searchResult['id']['videoId']);
                     if ($count == 0) {
@@ -150,18 +143,17 @@ class Ib3ParsersController extends AppController {
                     }
                 }
             }
-       } 
-        else {
+        } else {
             $this->Session->setFlash('Please Enter the KeyWord and Max Results');
         }
     }
 
     private function videoList($videoID) {
-     //   print_r($videoID);
+        //   print_r($videoID);
 //        print_r($channelId);
 //        print_r($channelTitle);
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
@@ -181,36 +173,36 @@ class Ib3ParsersController extends AppController {
 //            'channelTitle'=> $channelId,
 //            'channelId'=> $channelTitle
         ));
-      //   print_r($searchResponse);
+        //   print_r($searchResponse);
         return $searchResponse;
     }
-    
-   private function covtime($time) {
-  //     print_r($time);
-    preg_match_all('/(\d+)/',$time,$parts);
 
-    // Put in zeros if we have less than 3 numbers.
-    if (count($parts[0]) == 1) {
-        array_unshift($parts[0], "0", "0");
-    } elseif (count($parts[0]) == 2) {
-        array_unshift($parts[0], "0");
+    private function covtime($time) {
+        //     print_r($time);
+        preg_match_all('/(\d+)/', $time, $parts);
+
+        // Put in zeros if we have less than 3 numbers.
+        if (count($parts[0]) == 1) {
+            array_unshift($parts[0], "0", "0");
+        } elseif (count($parts[0]) == 2) {
+            array_unshift($parts[0], "0");
+        }
+
+        $sec_init = $parts[0][2];
+        $seconds = $sec_init % 60;
+        $seconds_overflow = floor($sec_init / 60);
+
+        $min_init = $parts[0][1] + $seconds_overflow;
+        $minutes = ($min_init) % 60;
+        $minutes_overflow = floor(($min_init) / 60);
+
+        $hours = $parts[0][0] + $minutes_overflow;
+
+        if ($hours != 0)
+            return $hours . ':' . $minutes . ':' . $seconds;
+        else
+            return $minutes . ':' . $seconds;
     }
-
-    $sec_init = $parts[0][2];
-    $seconds = $sec_init%60;
-    $seconds_overflow = floor($sec_init/60);
-
-    $min_init = $parts[0][1] + $seconds_overflow;
-    $minutes = ($min_init)%60;
-    $minutes_overflow = floor(($min_init)/60);
-
-    $hours = $parts[0][0] + $minutes_overflow;
-
-    if($hours != 0)
-        return $hours.':'.$minutes.':'.$seconds;
-    else
-        return $minutes.':'.$seconds;
-   }
 
     private function isDuplicate($videoId) { // Checking Duplicate using video ID
 // print_r($channelId);
