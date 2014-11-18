@@ -9,6 +9,7 @@ App::uses('AppController', 'Controller');
  */
 class Ib3ParsersController extends AppController {
 
+    public $helpers = array('Html', 'Form');
     var $uses = array('Vod_Detail');
 
     public function index() {
@@ -29,10 +30,9 @@ class Ib3ParsersController extends AppController {
 // Define an object that will be used to make all API requests.
         $youtube = new Google_Service_YouTube($client);
 
-
 // Call the search.list method to retrieve results matching the specified
 // query term.
-
+        print_r($this->request->data['maxResults']);
         if ($this->request->data && $this->request->data['q'] && $this->request->data['maxResults']) {
             $searchResponse = $youtube->search->listSearch('id,snippet', array(
                 'q' => $this->request->data['q'],
@@ -40,21 +40,8 @@ class Ib3ParsersController extends AppController {
                     //  'c' => $this->request->data['c'],
 //                'videoDefinition' => 'standard'
             ));
-            print_r($searchResponse);
-
-//         if ($this->request->data && $this->request->data['q'] && $this->request->data['maxResults']) {
-//            $searchResponse = $youtube->search->listSearch('part="snippet", type="channel", q="display name"', array(
-//                'q' => $this->request->data['q'],
-//                'maxResults' => $this->request->data['maxResults'],
-//              //  'c' => $this->request->data['c'],
-////                'videoDefinition' => 'standard'
-//            ));
             //    print_r($searchResponse);
-//   $videoFeed = $youtube->getVideoFeed($searchResponse);
-//   $url = 'http://gdata.youtube.com/feeds/standardfeeds/top_rated?time=today';
-//   $videoFeed = $youtube->getVideoFeed($url);
-//   print_r($videoFeed);
-            //     print_r($searchResponse);
+
             $videos = '';
             $channels = '';
             $playlists = '';
@@ -66,11 +53,11 @@ class Ib3ParsersController extends AppController {
                 $videoID = $searchResult['id']['videoId'];
                 //  $channelId = $searchResult['snippet']['channelId'];
                 $channelTitle = $searchResult['snippet']['channelTitle'];
-                print_r($channelTitle);
+                //    print_r($channelTitle);
                 //  print_r($videoID);
                 $videoResults = $this->videoList($videoID); // extracting duration from Video API
                 foreach ($videoResults as $videoResult) {
-                   
+
                     $convertMin = $videoResult['contentDetails']['duration'];
                     $convertMins = $this->covtime($convertMin);
                     //  print_r($convertMins);
@@ -79,38 +66,7 @@ class Ib3ParsersController extends AppController {
                     if ($count == 0) {
 
                         $url = 'https://www.youtube.com/watch?v=';
-//            print_r($searchResult['kind']);
-//            echo '<br>';
-//            print_r($searchResult['etag']);
-//            echo '<br>';
-//            print_r($searchResult['id']['videoId']);
-//            echo '<br>';
-//            print_r($searchResult['snippet']['default']['url']);
-//            echo '<br>';
-//            print_r($searchResult['snippet']['medium']['url']);
-//            echo '<br>';
-//            print_r($searchResult['snippet']['high']['url']);
-//            echo '<br>';
-//            print_r($searchResult['snippet']['channelId']);
-//            echo '<br>';
-//            print_r($searchResult['snippet']['title']);
-//            echo '<br>';
-//            print_r($searchResult['snippet']['description']);
-//            echo '<br>';
-//            print_r($searchResult['snippet']['publishedAt']);
-//            echo '<br>';
-//            print_r($searchResult['snippet']['channelTitle']);
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
-//            echo '<br>';
+
                         $videoId = $searchResult['id']['videoId'];
                         $videoURL = ($url);
                         $constructURL = $videoURL . $videoId;
@@ -146,6 +102,18 @@ class Ib3ParsersController extends AppController {
         } else {
             $this->Session->setFlash('Please Enter the KeyWord and Max Results');
         }
+    }
+
+    public function view($id = null) {
+        if (!$id) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+
+        $post = $this->Vod_Detail->findById($id);
+        if (!$post) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+        $this->set('post', $post);
     }
 
     private function videoList($videoID) {
