@@ -14,8 +14,8 @@ class Ib3ParsersController extends AppController {
 
     public function index() {
 
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
@@ -29,7 +29,7 @@ class Ib3ParsersController extends AppController {
 
 // Define an object that will be used to make all API requests.
         $youtube = new Google_Service_YouTube($client);
-
+        $tableData=[];
 // Call the search.list method to retrieve results matching the specified
 // query term.
         print_r($this->request->data['maxResults']);
@@ -40,16 +40,16 @@ class Ib3ParsersController extends AppController {
                     //  'c' => $this->request->data['c'],
 //                'videoDefinition' => 'standard'
             ));
-            //    print_r($searchResponse);
+           //     print_r($searchResponse);
 
             $videos = '';
             $channels = '';
             $playlists = '';
-
+            $arrayIndex=0;
 // Add each result to the appropriate list, and then display the lists of
 // matching videos, channels, and playlists.
             foreach ($searchResponse as $searchResult) {
-                //print_r($searchResult);
+                
                 $videoID = $searchResult['id']['videoId'];
                 //  $channelId = $searchResult['snippet']['channelId'];
                 $channelTitle = $searchResult['snippet']['channelTitle'];
@@ -57,7 +57,7 @@ class Ib3ParsersController extends AppController {
                 //  print_r($videoID);
                 $videoResults = $this->videoList($videoID); // extracting duration from Video API
                 foreach ($videoResults as $videoResult) {
-
+              
                     $convertMin = $videoResult['contentDetails']['duration'];
                     $convertMins = $this->covtime($convertMin);
                     //  print_r($convertMins);
@@ -88,7 +88,8 @@ class Ib3ParsersController extends AppController {
                                 "duration" => $convertMins
                             )
                         );
-
+                        $tableData[$arrayIndex]=$insert_data;
+                        $arrayIndex++;
                         if ($this->Vod_Detail->save($insert_data)) {
                             print_r("Inserted Succesfully<br>");
                         } else {
@@ -99,6 +100,8 @@ class Ib3ParsersController extends AppController {
                     }
                 }
             }
+                    $this->set('tableData', $tableData);
+
         } else {
             $this->Session->setFlash('Please Enter the KeyWord and Max Results');
         }
@@ -120,8 +123,8 @@ class Ib3ParsersController extends AppController {
         //   print_r($videoID);
 //        print_r($channelId);
 //        print_r($channelTitle);
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
