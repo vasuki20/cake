@@ -13,8 +13,8 @@ class ChannelsController extends AppController {
 
     public function index() {
 
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
@@ -122,8 +122,8 @@ class ChannelsController extends AppController {
         //   print_r($videoID);
 //        print_r($channelId);
 //        print_r($channelTitle);
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
@@ -152,8 +152,11 @@ class ChannelsController extends AppController {
         //   print_r($videoID);
 //        print_r($channelId);
 //        print_r($channelTitle);
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
+       // require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
+       // require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
+        
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * Google Developers Console <https://console.developers.google.com/>
@@ -181,9 +184,10 @@ class ChannelsController extends AppController {
         //   print_r($videoID);
 //        print_r($channelId);
 //        print_r($channelTitle);
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
-
+     //   require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
+     //   require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
+          require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+          require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * Google Developers Console <https://console.developers.google.com/>

@@ -36,3 +36,72 @@ echo $this->Form->input('number', array(
 ));
 echo $this->Form->end('Submit');
 ?>
+
+
+<?php $this->log($tableDatas, 'debug'); ?>
+<?php //print_r($tableDatas);?>
+<table>
+            <tr>
+                <th>VideoID</th>
+                <th>ChannelID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Thumbnails_Default</th>
+                <th>Thumbnails_Medium</th>
+                <th>Thumbnails_High</th>
+                <th>ChannelTitle</th>
+                <th>Video_URL</th>
+                <th>PublishedAt</th>
+                <th>Duration</th>
+                <th>Edit</th>
+                <?php
+               
+                    echo '<th>Delete</th>';
+                
+                ?>
+            </tr>
+          
+             <?php foreach ($tableDatas as $tableData): ?>
+
+                <tr>
+                    <td>
+                        <?php
+                        echo $this->Html->link
+                                (
+                                $tableData['Vod_Detail']['id_videoId'], array('controller' => 'ib3parsers',
+                            'action' => 'view', $tableData['Vod_Detail']['id_videoId']
+                                )
+                        );
+                        ?>
+                    </td>
+                    <td><?php echo $tableData['Vod_Detail']['channelId']; ?></td>
+                    <td><?php echo $tableData['Vod_Detail']['title']?></td>
+                    <td><?php echo $tableData['Vod_Detail']['description']; ?></td>
+                    <td><?php echo $tableData['Vod_Detail']['thumbnails_default']; ?> </td>
+                    <td><?php echo $tableData['Vod_Detail']['thumbnails_medium']; ?> </td>
+                    <td><?php echo $tableData['Vod_Detail']['thumbnails_high']; ?> </td>
+                    <td><?php echo $tableData['Vod_Detail']['channelTitle']; ?> </td>                  
+                    <td style="max-width: 120px;"><?php echo $tableData['Vod_Detail']['video_url']; ?></td>                   
+                    <td><?php echo $tableData['Vod_Detail']['publishedAt']; ?> </td>
+                    <td><?php echo $tableData['Vod_Detail']['duration']; ?> </td>  
+                    <td>
+                        <?php
+                        echo $this->Html->link(
+                                'Edit', array('action' => 'edit', $tableData['Vod_Detail']['id_videoId']));
+                        ?>
+                    </td>
+                    <td>
+
+    <?php  
+        echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $tableData['Vod_Detail']['id_videoId']), null, __('Are you sure you want to delete # %s?', $tableData['Vod_Detail']['id_videoId']));
+    
+    ?>
+
+                    </td>
+
+                </tr>
+
+<?php endforeach; ?>
+<?php unset($tableData); ?>
+        </table>
+
