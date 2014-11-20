@@ -15,7 +15,6 @@ class ChannelsController extends AppController {
 
         require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
         require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
-
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * Google Developers Console <https://console.developers.google.com/>
@@ -39,12 +38,9 @@ class ChannelsController extends AppController {
                 'forUsername' => $this->request->data['q'],
                 'maxResults' => $this->request->data['maxResults'],
             ));
-
             //  print_r($channelsResponse);
             //  print_r("<br><br>");
             //  print_r($channelsResponse[0]['id']);
-
-
             $channelId = $channelsResponse[0]['id'];
             $playResults = $this->playList($channelId);
              echo "heloooooo";

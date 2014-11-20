@@ -15,23 +15,25 @@
 
             <ul>
                 <li> <?php echo $this->Html->link(__('Search by Keyword'), array('controller' => 'ib3parsers', 'action' => 'index')); ?></li>
-                 <li class = active> <?php echo $this->Html->link(__('Search by Channel'), array('action' => 'index')); ?></li>
+                 <li class = active> <?php echo $this->Html->link(__('Search by Channel'), array('controller' => 'channels', 'action' => 'index')); ?></li>
+                 
+            </ul>
+        </div>
 
 <?php
 echo $this->Form->create();
-echo $this->Form->input('search',array(
+echo $this->Form->input('Search by Channel',array(
     'id'=>'q',
     'name'=> 'q',
     'placeholder'=>'Enter Search Term'
 ));
 
-echo $this->Form->input('number', array(
-   'id' => 'maxResults',
+echo $this->Form->input('MaxResults', array(
+    'id' => 'maxResults',
     'name' => 'maxResults',
-    'min' => 1,
-    'max' => 50,
-    'step' => 1,
-    'value' => 25
+    'type' => 'select',
+    'options' => array_combine(range(10, 100, 10), range(10, 100, 10))
 ));
+
 echo $this->Form->end('Submit');
 ?>

@@ -32,7 +32,7 @@ class Ib3ParsersController extends AppController {
         $tableData=[];
 // Call the search.list method to retrieve results matching the specified
 // query term.
-        print_r($this->request->data['maxResults']);
+      //  print_r($this->request->data['maxResults']);
         if ($this->request->data && $this->request->data['q'] && $this->request->data['maxResults']) {
             $searchResponse = $youtube->search->listSearch('id,snippet', array(
                 'q' => $this->request->data['q'],
