@@ -30,9 +30,7 @@
         </div>
 
     </body>
-    <html>
-
-
+    </html>
 
         <?php
         echo $this->Form->create('User');
@@ -44,6 +42,7 @@
         echo '</div></div>';
         ?>
         <?php $this->log($Users, 'debug'); ?>
+    
         <table>
             <tr>
                 <th>ID</th>
