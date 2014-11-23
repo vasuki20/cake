@@ -9,24 +9,26 @@ App::uses('AppController', 'Controller');
  */
 class Ib3ParsersController extends AppController {
 
+    public $apiPath = 'C:\xampp\htdocs\google-api-php-client-master';
+    public $DEVELOPER_KEY = 'AIzaSyAcWCerpP1AerBZmGKF13_-qNPX_QOWK34';
     public $helpers = array('Html', 'Form');
     var $uses = array('Vod_Detail');
 
     public function index() {
+        
+      
 
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once $this->apiPath.'\src\Google\Client.php';
+        require_once $this->apiPath.'\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * Google Developers Console <https://console.developers.google.com/>
          * Please ensure that you have enabled the YouTube Data API for your project.
          */
-        $DEVELOPER_KEY = 'AIzaSyAcWCerpP1AerBZmGKF13_-qNPX_QOWK34';
 
         $client = new Google_Client();
-        $client->setDeveloperKey($DEVELOPER_KEY);
-
+        $client->setDeveloperKey($this->DEVELOPER_KEY);
 // Define an object that will be used to make all API requests.
         $youtube = new Google_Service_YouTube($client);
         $tableData=[];
@@ -94,67 +96,66 @@ class Ib3ParsersController extends AppController {
                         );
                         $tableData[$arrayIndex]=$insert_data;
                         $arrayIndex++;
-                        if ($this->Vod_Detail->save($insert_data)) {
-                            print_r("Inserted Succesfully<br>");
-                        } else {
-                            print_r("Insert failed<br>");
-                        }
+                        
                     } else {
                         print_r("Duplicate Video ID. So Skipping.....<br>");
                     }
                 }
             
                     $this->set('tableDatas', $tableData);
-                    //print_r($tableDatas);
 
         } else {
-            $this->Session->setFlash('Please Enter the KeyWord and Max Results');
+             if (isset($this->request->params['named']['status'])) {
+                if ($this->request->params['named']['status'] >= 1) {
+                    $this->Session->setFlash($this->request->params['named']['status'].' Row Inserted Succesfully');
+                } else {
+                    $this->Session->setFlash('Insert Failed');
+                }
+            } else {
+                $this->Session->setFlash('Please Enter the KeyWord and Max Results');
+            }
         }
     }
 
-    public function view($id = null) {
-        if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
+      public function save() {
+        $this->autoRender = false;
+        $allData=$this->request->data;
+        $insertData=[];
+        //print_r($insert_data['Vod_Detail']);
+        $status = 0;
+        foreach ($allData['Vod_Detail'] as $data) {
+            print_r('<br>checked->' . $data['checked']);
+            if ($data['checked'] == 1) {
+                print_r($data['id_videoId']);
+                $insertData[$status] = $data;
+                $status++;
+                print_r('status->' . $status);
+            }
         }
+        $this->Vod_Detail->saveAll($insertData);
+       
 
-        $post = $this->Vod_Detail->findById($id);
-        if (!$post) {
-            throw new NotFoundException(__('Invalid post'));
-        }
-         $this->set('tableDatas', $tableData);
-    }
-    
-    public function delete($videoID) {
-        print_r('Inside delete');
-        if ($this->request->is('get')) {
-            throw new MethodNotAllowedException();
-        }
 
-        if ($this->Vod_Detail->delete($videoID)) {
-            $this->Session->setFlash(
-                    __('The post with id: %s has been deleted.', h($videoID))
-            );
-            return $this->redirect(array('action' => 'index'));
-        }
+        $this->redirect(array('controller' => 'ib3parsers', 'action' => 'index', 'status' => $status));
+
     }
 
     private function videoList($videoID) {
         //   print_r($videoID);
 //        print_r($channelId);
 //        print_r($channelTitle);
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once $this->apiPath.'\src\Google\Client.php';
+        require_once $this->apiPath.'\src\Google\Service\YouTube.php';
 
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * Google Developers Console <https://console.developers.google.com/>
          * Please ensure that you have enabled the YouTube Data API for your project.
          */
-        $DEVELOPER_KEY = 'AIzaSyAcWCerpP1AerBZmGKF13_-qNPX_QOWK34';
 
         $client = new Google_Client();
-        $client->setDeveloperKey($DEVELOPER_KEY);
-
+        $client->setDeveloperKey($this->DEVELOPER_KEY);
+        
 // Define an object that will be used to make all API requests.
         $youtube = new Google_Service_YouTube($client);
 
