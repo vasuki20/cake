@@ -49,9 +49,9 @@ h1, h2, h3, h4 {
 	margin-bottom:0.5em;
 }
 h1 {
-	background:#fff;
+	background: #D8C5C5;
 	color: #003d4c;
-	font-size: 100%;
+	font-size: 200%;
 }
 h2 {
 	background:#fff;
@@ -334,7 +334,7 @@ select {
 	clear: both;
 	font-size: 120%;
 	vertical-align: text-bottom;
-        width: 100px;
+        width: 300px;
 }
 select[multiple=multiple] {
 	width: 100%;
@@ -889,5 +889,12 @@ margin-right: 30px;
 div#next_btn {
 float: left;
 margin-right: 30px;
+}
+
+#header li {
+	display: inline;
+	border: solid;
+	border-width: 1px 1px 0 1px;
+	margin: 0 0.5em 0 0;
 }
 
