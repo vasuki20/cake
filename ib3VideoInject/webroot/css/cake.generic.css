@@ -898,3 +898,18 @@ margin-right: 30px;
 	margin: 0 0.5em 0 0;
 }
 
+.layout{
+    width: 200%;
+    height: 400px;  
+    position: relative;
+    margin: auto;
+    background-image: url('../img/movieForm.jpg');
+}
+
+.layout-image{
+    width: 940px;
+    height: 230px;
+    position: relative;
+    margin: auto;
+}
+

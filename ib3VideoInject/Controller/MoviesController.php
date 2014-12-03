@@ -10,12 +10,12 @@ App::uses('CakeLog', 'Log');
  */
 class MoviesController extends AppController {
 
+    public $components = array('Paginator', 'Session');
     public $helpers = array('Html', 'Form');
     var $uses = array('Movie', 'Vod_Detail');
 
     public function index() {
-
-        $this->autoRender = false;
+        $videoId = $this->Movie->find('all')->contain(['abr']);
     }
 
     public function add() {
@@ -42,54 +42,118 @@ class MoviesController extends AppController {
                 $video['Movie']['Channel Id'] = 28;
                 print_r($video['Movie']['Channel Id']);
             } else {
-              //  echo "value not found";
+                //  echo "value not found";
             }
 
             $videoID = $video['Movie']['VideoLink']; // retriving oly the video ID 
             $count = $this->isDuplicate($videoID);
-                    if ($count == 0) {
+            if ($count == 0) {
 //            $url = 'https://www.youtube.com/watch?v=';
 //            $videoURL = $url . $videoID;
 //             print_r($videoURL);
-            /* Retriving the value from the array */
-            $insert_data = array("Movie" => array(
-                    "category_id" => 7,
-                    "channel_id" => $video['Movie']['Channel Id'],
-                    "title" => $video['Movie']['Title'],
-                    "type" => $video['Movie']['Type'],
-                    "description" => $video['Movie']['Description'],
-                    "image_thumb" => $video['Movie']['image_thumb'],
-                    "director" => $video['Movie']['Director'],
-                    "cast" => $video['Movie']['Cast'],
-                    "genre" => $video['Movie']['Genre'],
-                    "tag" => '-',
-                    "language" => 'English',
-                    "subtitle" => '-',
-                    "duration" => $video['Movie']['Duration'],
-                    "credit" => '-',
-                    "cp" => 'JJJ',
-                    "telco_region" => 'ib3 media',
-                    "abr" => $videoID,
-                    "rtsp_1" => $videoID,
-                    "rtsp_2" => $videoID,
-                    "rtsp_3" => $videoID,
-                    "bundle_id" => 1,
-                    "published" => 0
-                )
-            );
-            /* save values into DB */
-            if ($this->Movie->save($insert_data)) {
-                $this->Session->setFlash(__('Your datas has been saved.'));
-                return $this->redirect(array('action' => 'add'));
+                /* Retriving the value from the array */
+                $insert_data = array("Movie" => array(
+                        "category_id" => 7,
+                        "channel_id" => $video['Movie']['Channel Id'],
+                        "title" => $video['Movie']['Title'],
+                        "type" => $video['Movie']['Type'],
+                        "description" => $video['Movie']['Description'],
+                        "image_thumb" => $video['Movie']['image_thumb'],
+                        "director" => $video['Movie']['Director'],
+                        "cast" => $video['Movie']['Cast'],
+                        "genre" => $video['Movie']['Genre'],
+                        "tag" => '-',
+                        "language" => 'English',
+                        "subtitle" => '-',
+                        "duration" => $video['Movie']['Duration'],
+                        "credit" => '-',
+                        "cp" => 'JJJ',
+                        "telco_region" => 'ib3 media',
+                        "abr" => $videoID,
+                        "rtsp_1" => $videoID,
+                        "rtsp_2" => $videoID,
+                        "rtsp_3" => $videoID,
+                        "bundle_id" => 1,
+                        "published" => 0
+                    )
+                );
+                /* save values into DB */
+                if ($this->Movie->save($insert_data)) {
+                    $this->Session->setFlash(__('Your datas has been saved.'));
+                    return $this->redirect(array('action' => 'add'));
+                }
+                $this->Session->setFlash(__('Unable to add your data.'));
+            } else {
+                $this->Session->setFlash(__("Duplicate Video ID. Please enter new ID <br>"));
+                // print_r("Duplicate Video ID. Please enter new ID <br>");
             }
-            $this->Session->setFlash(__('Unable to add your data.'));
-        }
-        else{
-            $this->Session->setFlash(__("Duplicate Video ID. Please enter new ID <br>"));
-           // print_r("Duplicate Video ID. Please enter new ID <br>");
         }
     }
+
+    public function edit() {
+        $this->log('hi', 'debug');
+        $this->Paginator->settings = array(
+            'limit' => 10
+        );
+        $data = $this->Paginator->paginate('Movie');
+        $this->set('Movies', $data);
+        $this->log($data, 'debug');
+        if ($this->request->is('post')) {
+            print_r($this->request->data);
+            if ($this->request->data) {
+                //$this->log($this->request->data['Movie']['SearchParam'], 'debug');
+                $searchParam = $this->request->data['Movie']['SearchParam'];
+                print_r($searchParam);
+                $this->Paginator->settings = array(
+                    'conditions' => array(
+                        'OR' => array('Movie.title LIKE' => '%' . $searchParam . '%',
+//                        'Movie.id LIKE' => '%' . $searchParam . '%',
+//                        'Channel.name LIKE' => '%' . $searchParam . '%'
+                        )
+                    ),
+                    'limit' => 10
+                );
+                $data = $this->Paginator->paginate('Movie');
+            } else {
+                $this->Session->setFlash(__('Invalid Request'));
+            }
+        }
+        $this->set('Movies', $data);
     }
+
+    public function search() {
+        if (!isset($this->request->query['title'])) {
+            throw new BadRequestException();
+        }
+
+        $results = $this->Location->findByKeywords($this->request->query['keywords']);
+
+        $this->set('results', $results);
+    }
+
+    public function editmovie($videolink = null) {
+        if (!$videolink) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+        $post = $this->Movie->findById($videolink);
+       // print_r($post);
+        if (!$post) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
+            $this->Movie->abr = $videolink;          
+            if ($this->Movie->save($this->request->data)) {
+                $this->Session->setFlash(__('Your post has been updated.'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Session->setFlash(__('Unable to update your post.'));
+        }
+
+        if (!$this->request->data) {
+            $this->request->data = $post;
+        }
+    }
+
     private function isDuplicate($videoId) { // Checking Duplicate using video ID
 // print_r($channelId);
 // print_r($title);
@@ -103,5 +167,3 @@ class MoviesController extends AppController {
     }
 
 }
-
-
