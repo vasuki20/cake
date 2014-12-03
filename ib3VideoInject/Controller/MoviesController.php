@@ -15,7 +15,7 @@ class MoviesController extends AppController {
     var $uses = array('Movie', 'Vod_Detail');
 
     public function index() {
-        $videoId = $this->Movie->find('all')->contain(['abr']);
+      //  $videoId = $this->Movie->find('all')->contain(['abr']);
     }
 
     public function add() {
@@ -131,26 +131,32 @@ class MoviesController extends AppController {
         $this->set('results', $results);
     }
 
-    public function editmovie($videolink = null) {
-        if (!$videolink) {
+    public function editmovie($id = null) {
+        // $this->set('Title',$this->Movie->find('list', array('fields' => array('title'))));
+       // print_r($id);
+        if (!$id) {
             throw new NotFoundException(__('Invalid post'));
         }
-        $post = $this->Movie->findById($videolink);
+        $movie = $this->Movie->findById($id);
        // print_r($post);
-        if (!$post) {
+        if (!$movie) {
             throw new NotFoundException(__('Invalid post'));
         }
         if ($this->request->is(array('post', 'put'))) {
-            $this->Movie->abr = $videolink;          
+            $this->Movie->id = $id;
+            
+            print_r("hi");
+            print_r($this->request->data);
+            
             if ($this->Movie->save($this->request->data)) {
                 $this->Session->setFlash(__('Your post has been updated.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect(array('action' => 'add'));
             }
             $this->Session->setFlash(__('Unable to update your post.'));
         }
-
+        print_r($this->request->data);
         if (!$this->request->data) {
-            $this->request->data = $post;
+            $this->request->data = $movie;
         }
     }
 

@@ -59,12 +59,12 @@
                    <td><?php print_r($Movie['Movie']['abr']);?></td>                  
                    <td>
                         <?php
-                           echo $this->Html->link('Edit', array('action' => 'editmovie', $Movie['Movie']['title']));
+                           echo $this->Html->link('Edit', array('action' => 'editmovie', $Movie['Movie']['id']));
                         ?>
                     </td>
                    <td>
                         <?php
-                            echo $this->Form->postLink(__('Delete'), array('action' => 'deletemovie', $Movie['Movie']['title']), null, __('Are you sure you want to delete # %s?', $Movie['Movie']['title']));
+                            echo $this->Form->postLink(__('Delete'), array('action' => 'deletemovie', $Movie['Movie']['id']), null, __('Are you sure you want to delete # %s?', $Movie['Movie']['title']));
                         ?>
                     </td>
                </tr>
