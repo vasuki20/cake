@@ -17,7 +17,7 @@
                 <li> <?php echo $this->Html->link(__('Home'), array('controller' => 'movies', 'action' => 'index')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Add Movie'), array('controller' => 'movies', 'action' => 'add')); ?></li> 
                 <li class = active> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
-                <li> <?php echo $this->Html->link(__('Delete Movie'), array('action' => 'delete')); ?></li>               
+                
             </ul>
         </div>       
         <?php
@@ -32,39 +32,33 @@
         <table>
             <tr> 
                 <th>ID</th>
+                <th>Edit</th>
                 <th>Title</th>
                 <th>Type</th>
-                <th>Description</th>
-                <th>Image Thumb</th>
-                <th>Director</th>
-                <th>Cast</th>
+                <th>Description</th>               
                 <th>Genre</th>              
                 <th>Duration</th>
-                <th>Video Link</th> 
-                <th>Edit</th> 
+                <th>Video Link</th>                
                 <th>Delete</th> 
             </tr>
             <?php// print_r($Movies); ?>
              <?php foreach ($Movies as $Movie): ?>
                <tr>
                    <td><?php print_r($Movie['Movie']['id']);?></td>
-                   <td><?php print_r($Movie['Movie']['title']);?></td>
-                   <td><?php print_r($Movie['Movie']['type']);?></td>
-                   <td><?php print_r($Movie['Movie']['description']);?></td>
-                   <td><?php print_r($Movie['Movie']['image_thumb']);?></td>
-                   <td><?php print_r($Movie['Movie']['director']);?></td>
-                   <td><?php print_r($Movie['Movie']['cast']);?></td>
-                   <td><?php print_r($Movie['Movie']['genre']);?></td>
-                   <td><?php print_r($Movie['Movie']['duration']);?></td>
-                   <td><?php print_r($Movie['Movie']['abr']);?></td>                  
                    <td>
                         <?php
                            echo $this->Html->link('Edit', array('action' => 'editmovie', $Movie['Movie']['id']));
                         ?>
                     </td>
+                   <td><?php print_r($Movie['Movie']['title']);?></td>
+                   <td><?php print_r($Movie['Movie']['type']);?></td>
+                   <td><?php print_r($Movie['Movie']['description']);?></td>                 
+                   <td><?php print_r($Movie['Movie']['genre']);?></td>
+                   <td><?php print_r($Movie['Movie']['duration']);?></td>
+                   <td><?php print_r($Movie['Movie']['abr']);?></td>                                     
                    <td>
                         <?php
-                            echo $this->Form->postLink(__('Delete'), array('action' => 'deletemovie', $Movie['Movie']['id']), null, __('Are you sure you want to delete # %s?', $Movie['Movie']['title']));
+                            echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $Movie['Movie']['id']), null, __('Are you sure you want to delete # %s?', $Movie['Movie']['title']));
                         ?>
                     </td>
                </tr>

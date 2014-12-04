@@ -13,21 +13,19 @@
     </head>
     <body>
         <div id='cssmenu'>
-            
+
             <ul>
                 <li class = active> <?php echo $this->Html->link(__('Home'), array('controller' => 'movies', 'action' => 'index')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Add Movie'), array('controller' => 'movies', 'action' => 'add')); ?></li> 
-                                <li> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
-                <li > <?php echo $this->Html->link(__('Delete Movie'), array('action' => 'delete')); ?></li>
-           
-                
+                <li> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
+
             </ul>
         </div>
-       <div class="layout">
-      <div class="layout-image">
-          <img src="img/layout.png" alt="">
-      </div>
-    </div>
+        <div class="layout">
+            <div class="layout-image">
+                <img src="img/layout.png" alt="">
+            </div>
+        </div>
 
-</body>
+    </body>
 </html>
