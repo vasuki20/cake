@@ -23,7 +23,7 @@
 
         <h1>Enter the Movie details</h1>
         <?php
-        echo $this->Form->create('Movie');
+        echo $this->Form->create('Movie',array('enctype'=>'multipart/form-data'));
         echo $this->Form->input('Category Id', array(
             'default' => 7,
             'disabled' => 'disabled'
@@ -37,7 +37,7 @@
         echo $this->Form->input('Title');
         echo $this->Form->input('Type');
         echo $this->Form->input('Description');
-        echo $this->Form->input('image_thumb', array('type'=>'file'));
+        echo $this->Form->input('image_thumb', array('action' => 'upload', 'type' => 'file'));
         echo $this->Form->input('Director');
         echo $this->Form->input('Cast');
         echo $this->Form->input('Genre');
