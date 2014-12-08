@@ -28,15 +28,15 @@ class MoviesController extends AppController {
             //  print_r($folderToSaveFiles);
             if (!empty($video['Movie']['image_thumb'])) {
                 $file = $video['Movie']['image_thumb']; //put the data into a var for easy use
-              //  print_r($file);
+                //  print_r($file);
                 // print_r($file);
-         //       $fp = fopen($file, "rw");
-        //$this->log($this->request->$fp, 'debug');
+                //       $fp = fopen($file, "rw");
+                //$this->log($this->request->$fp, 'debug');
 //        if (flock($fp, LOCK_EX)) {
 //            fwrite($fp, $data);
 //            flock($fp, LOCK_UN);
 //        }
-     //   fclose($fp);
+                //   fclose($fp);
                 $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
                 // print_r($ext);
                 $arr_ext = array('jpg', 'jpeg', 'gif'); //set allowed extensions
@@ -46,11 +46,10 @@ class MoviesController extends AppController {
                     //do the actual uploading of the file. First arg is the tmp name, second arg is 
                     //where we are putting it
                     $newFilename = $file['name']; // edit/add here as you like your new filename to be.
-                   // print_r($newFilename);
+                    // print_r($newFilename);
                     $result = move_uploaded_file($file['tmp_name'], $folderToSaveFiles . $newFilename);
-                  //  print_r($file['tmp_name']);
-
-                  //  print_r($result);
+                    //  print_r($file['tmp_name']);
+                    //  print_r($result);
                 }
             }
             //  print_r($video);
@@ -77,8 +76,8 @@ class MoviesController extends AppController {
                 //  echo "value not found";
             }
             $videoID = $video['Movie']['VideoLink']; // retriving oly the video ID 
-           // $image = $video['Movie']['image_thumb'];
-           // print_r($image);
+            // $image = $video['Movie']['image_thumb'];
+            // print_r($image);
             $count = $this->isDuplicate($videoID);
             if ($count == 0) {
 //            $url = 'https://www.youtube.com/watch?v=';
