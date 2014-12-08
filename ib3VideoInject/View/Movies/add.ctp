@@ -23,7 +23,7 @@
 
         <h1>Enter the Movie details</h1>
         <?php
-        echo $this->Form->create('Movie',array('enctype'=>'multipart/form-data'));
+        echo $this->Form->create('Movie',array('type'=>'file'));
         echo $this->Form->input('Category Id', array(
             'default' => 7,
             'disabled' => 'disabled'

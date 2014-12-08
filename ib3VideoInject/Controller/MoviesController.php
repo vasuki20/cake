@@ -21,10 +21,10 @@ class MoviesController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             $this->Movie->create();
-            //  print_r($this->request->data);
+              print_r($this->request->data);
             $video = $this->request->data;
             /* image storage part */
-            $folderToSaveFiles = 'C:\xampp\htdocs\cake\cake';
+            $folderToSaveFiles = 'C:\Users\Vasuki\Desktop\testPHP\\';
             //  print_r($folderToSaveFiles);
             if (!empty($video['Movie']['image_thumb'])) {
                 $file = $video['Movie']['image_thumb']; //put the data into a var for easy use
@@ -46,10 +46,17 @@ class MoviesController extends AppController {
                     //do the actual uploading of the file. First arg is the tmp name, second arg is 
                     //where we are putting it
                     $newFilename = $file['name']; // edit/add here as you like your new filename to be.
-                    // print_r($newFilename);
+                    echo "<br>";
+                     print_r($file['tmp_name']);
+                     echo "<br>";
+                     print_r($folderToSaveFiles);
+                     echo "<br>";
+                     print_r($newFilename);
+                     echo "<br>";
                     $result = move_uploaded_file($file['tmp_name'], $folderToSaveFiles . $newFilename);
-                    //  print_r($file['tmp_name']);
-                    //  print_r($result);
+                     print_r($result);
+                     echo "<br>";
+                     echo "after result";
                 }
             }
             //  print_r($video);
@@ -110,10 +117,10 @@ class MoviesController extends AppController {
                     )
                 );
                 /* save values into DB */
-                if ($this->Movie->save($insert_data)) {
-                    $this->Session->setFlash(__('Your datas has been saved.'));
-                    return $this->redirect(array('action' => 'add'));
-                }
+//                if ($this->Movie->save($insert_data)) {
+//                    $this->Session->setFlash(__('Your datas has been saved.'));
+//                    return $this->redirect(array('action' => 'add'));
+//                }
                 $this->Session->setFlash(__('Unable to add your data.'));
             } else {
                 $this->Session->setFlash(__("Duplicate Video ID. Please enter new ID <br>"));
