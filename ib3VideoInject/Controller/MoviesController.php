@@ -24,7 +24,7 @@ class MoviesController extends AppController {
               print_r($this->request->data);
             $video = $this->request->data;
             /* image storage part */
-            $folderToSaveFiles = 'C:\Users\Vasuki\Desktop\testPHP\\';
+            $folderToSaveFiles = 'C:\xampp\htdocs\img\\';
             //  print_r($folderToSaveFiles);
             if (!empty($video['Movie']['image_thumb'])) {
                 $file = $video['Movie']['image_thumb']; //put the data into a var for easy use
