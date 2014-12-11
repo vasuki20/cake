@@ -21,7 +21,7 @@ class MoviesController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             $this->Movie->create();
-              print_r($this->request->data);
+            print_r($this->request->data);
             $video = $this->request->data;
             /* image storage part */
             $folderToSaveFiles = 'C:\xampp\htdocs\img\\';
@@ -47,16 +47,16 @@ class MoviesController extends AppController {
                     //where we are putting it
                     $newFilename = $file['name']; // edit/add here as you like your new filename to be.
                     echo "<br>";
-                     print_r($file['tmp_name']);
-                     echo "<br>";
-                     print_r($folderToSaveFiles);
-                     echo "<br>";
-                     print_r($newFilename);
-                     echo "<br>";
+                    print_r($file['tmp_name']);
+                    echo "<br>";
+                    print_r($folderToSaveFiles);
+                    echo "<br>";
+                    print_r($newFilename);
+                    echo "<br>";
                     $result = move_uploaded_file($file['tmp_name'], $folderToSaveFiles . $newFilename);
-                     print_r($result);
-                     echo "<br>";
-                     echo "after result";
+                    print_r($result);
+                    echo "<br>";
+                    echo "after result";
                 }
             }
             //  print_r($video);
@@ -68,7 +68,7 @@ class MoviesController extends AppController {
                 $video['Movie']['Channel Id'] = 24;
                 print_r($video['Movie']['Channel Id']);
             } elseif ($video['Movie']['Channel Id'] == "IB3 Trailers") {
-                $video['Movie']['Channel Id'] = 25;
+                $video['Movie']['Channel Id'] = 30;
                 print_r($video['Movie']['Channel Id']);
             } elseif ($video['Movie']['Channel Id'] == "IB3 Presents: STAR WARS VII") {
                 $video['Movie']['Channel Id'] = 27;
@@ -117,10 +117,10 @@ class MoviesController extends AppController {
                     )
                 );
                 /* save values into DB */
-//                if ($this->Movie->save($insert_data)) {
-//                    $this->Session->setFlash(__('Your datas has been saved.'));
-//                    return $this->redirect(array('action' => 'add'));
-//                }
+                if ($this->Movie->save($insert_data)) {
+                    $this->Session->setFlash(__('Your datas has been saved.'));
+                    return $this->redirect(array('action' => 'add'));
+                }
                 $this->Session->setFlash(__('Unable to add your data.'));
             } else {
                 $this->Session->setFlash(__("Duplicate Video ID. Please enter new ID <br>"));
@@ -128,7 +128,6 @@ class MoviesController extends AppController {
             }
         }
     }
-
     public function edit() {
         $this->log('hi', 'debug');
         $this->Paginator->settings = array(
@@ -171,22 +170,26 @@ class MoviesController extends AppController {
     }
 
     public function editmovie($id = null) {
+        // print_r($this->request->data);
         // $this->set('Title',$this->Movie->find('list', array('fields' => array('title'))));
         // print_r($id);
         if (!$id) {
             throw new NotFoundException(__('Invalid post'));
         }
         $movie = $this->Movie->findById($id);
+       // print_r($movie);
         // print_r($post);
         if (!$movie) {
             throw new NotFoundException(__('Invalid post'));
         }
         if ($this->request->is(array('post', 'put'))) {
+            print_r($this->request->data);
             $this->Movie->id = $id;
-
-            print_r("hi");
+          //  print_r($id);
+           // print_r("hi");
             // print_r($this->request->data);
             $insertdata = $this->request->data;
+            //print_r($insertdata);
             /* assigned channel id to the channels */
             if ($insertdata['Movie']['channelId'] == "IB3Media") {
                 $insertdata['Movie']['channelId'] = 22;
@@ -195,7 +198,7 @@ class MoviesController extends AppController {
                 $insertdata['Movie']['channelId'] = 24;
                 print_r($insertdata['Movie']['channelId']);
             } elseif ($insertdata['Movie']['channelId'] == "IB3 Trailers") {
-                $insertdata['Movie']['channelId'] = 25;
+                $insertdata['Movie']['channelId'] = 30;
                 print_r($insertdata['Movie']['channelId']);
             } elseif ($insertdata['Movie']['channelId'] == "IB3 Presents: STAR WARS VII") {
                 $insertdata['Movie']['channelId'] = 27;
@@ -210,49 +213,46 @@ class MoviesController extends AppController {
                 //  echo "value not found";
             }
             $editVideoID = $insertdata['Movie']['abr'];
-            $count = $this->isEditDuplicate($editVideoID);
-            if ($count == 0) {
 //            $url = 'https://www.youtube.com/watch?v=';
 //            $videoURL = $url . $videoID;
 //             print_r($videoURL);
-                /* Retriving the value from the array */
-                $edit_data = array("Movie" => array(
-                        "category_id" => 7,
-                        "channel_id" => $insertdata['Movie']['channelId'],
-                        "title" => $insertdata['Movie']['title'],
-                        "type" => $insertdata['Movie']['type'],
-                        "description" => $insertdata['Movie']['description'],
-                        "image_thumb" => $insertdata['Movie']['image_thumb'],
-                        "director" => $insertdata['Movie']['director'],
-                        "cast" => $insertdata['Movie']['cast'],
-                        "genre" => $insertdata['Movie']['genre'],
-                        "tag" => '-',
-                        "language" => 'English',
-                        "subtitle" => '-',
-                        "duration" => $insertdata['Movie']['duration'],
-                        "credit" => '-',
-                        "cp" => 'JJJ',
-                        "telco_region" => 'ib3 media',
-                        "abr" => $editVideoID,
-                        "rtsp_1" => $editVideoID,
-                        "rtsp_2" => $editVideoID,
-                        "rtsp_3" => $editVideoID,
-                        "bundle_id" => 1,
-                        "published" => 0
-                    )
-                );
-                /* save values into DB */
-                if ($this->Movie->save($edit_data)) {
-                    $this->Session->setFlash(__('Your datas has been saved.'));
-                    return $this->redirect(array('action' => 'add'));
+            /* Retriving the value from the array */
+            $edit_data = array("Movie" => array(
+                    "category_id" => 7,
+                    "channel_id" => $insertdata['Movie']['channelId'],
+                    "title" => $insertdata['Movie']['title'],
+                    "type" => $insertdata['Movie']['type'],
+                    "description" => $insertdata['Movie']['description'],                   
+                    "director" => $insertdata['Movie']['director'],
+                    "cast" => $insertdata['Movie']['cast'],
+                    "genre" => $insertdata['Movie']['genre'],
+                    "tag" => '-',
+                    "language" => 'English',
+                    "subtitle" => '-',
+                    "duration" => $insertdata['Movie']['duration'],
+                    "credit" => '-',
+                    "cp" => 'JJJ',
+                    "telco_region" => 'ib3 media',
+                    "abr" => $editVideoID,
+                    "rtsp_1" => $editVideoID,
+                    "rtsp_2" => $editVideoID,
+                    "rtsp_3" => $editVideoID,
+                    "bundle_id" => 1,
+                    "published" => 0
+                )
+            );
+            if(isset($insertdata['Movie']['image_thumb']))
+                {
+                   $edit_data ["Movie"]["image_thumb"]=$insertdata['Movie']['image_thumb'];
                 }
-                $this->Session->setFlash(__('Unable to add your data.'));
-            } else {
-                $this->Session->setFlash(__("Duplicate Video ID. Please enter new ID <br>"));
-                // print_r("Duplicate Video ID. Please enter new ID <br>");
+            /* save values into DB */
+            if ($this->Movie->save($edit_data)) {
+                $this->Session->setFlash(__('Your datas has been saved.'));
+                return $this->redirect(array('action' => 'add'));
             }
+            $this->Session->setFlash(__('Unable to add your data.'));          
         }
-
+        
         if (!$this->request->data) {
             $this->request->data = $movie;
         }

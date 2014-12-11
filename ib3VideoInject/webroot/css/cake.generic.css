@@ -912,4 +912,8 @@ margin-right: 30px;
     position: relative;
     margin: auto;
 }
+.note {
+font-size: 11px;
+color: #666;
+}
 

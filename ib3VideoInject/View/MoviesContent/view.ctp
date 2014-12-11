@@ -1,5 +1,3 @@
-<!-- File: /app/View/Posts/add.ctp -->
-
 <!doctype html>
 <html lang=''>
     <head>
@@ -13,19 +11,15 @@
     </head>
     <body>
         <div id='cssmenu'>
-
+            <h3> Content Management </h3>
             <ul>
-                <li class = active> <?php echo $this->Html->link(__('Home'), array('controller' => 'movies', 'action' => 'index')); ?></li> 
+              <li class = active> <?php echo $this->Html->link(__('Home'), array('controller' => 'movies', 'action' => 'index')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Add Movie'), array('controller' => 'movies', 'action' => 'add')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
                 <li> <?php echo $this->Html->link(__('Featured Image'), array('controller' => 'MoviesContent', 'action' => 'displaymovies', 'featured_image')); ?></li>
+
             </ul>
-        </div>
-        <div class="layout">
-            <div class="layout-image">
-                <img src="img/layout.png" alt="">
-            </div>
         </div>
 
     </body>
-</html>
+    </html>

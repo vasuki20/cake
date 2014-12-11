@@ -17,15 +17,16 @@
                 <li> <?php echo $this->Html->link(__('Home'), array('controller' => 'movies', 'action' => 'index')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Add Movie'), array('controller' => 'movies', 'action' => 'add')); ?></li> 
                 <li class = active> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
-                
+                 <li> <?php echo $this->Html->link(__('Featured Image'), array('controller' => 'MoviesContent', 'action' => 'displaymovies', 'featured_image')); ?></li>
             </ul>
-        </div>       
+        </div>  
+          
         <?php
         echo $this->Form->create('Movie');
         echo '<div><div id="searchText" style="width: 33%;float:left;margin-top: 3px;margin-left: 50px;">';
         echo $this->Form->input('SearchParam', array('placeholder' => 'Search by title'));
         echo '</div>';
-        echo '<div id="searchBtn" style="float: left;clear: none;padding: 0;">';
+        echo '<div id="searchBtn" style="width: 50%;float: left;clear: none;padding: 0;">';
         echo $this->Form->end('Search');
         echo '</div></div>';
         ?>
@@ -37,7 +38,7 @@
                 <th>Type</th>
                 <th>Description</th>               
                 <th>Genre</th>              
-                <th>Duration</th>
+                <th>Duration</th>                
                 <th>Video Link</th>                
                 <th>Delete</th> 
             </tr>
@@ -54,7 +55,7 @@
                    <td><?php print_r($Movie['Movie']['type']);?></td>
                    <td><?php print_r($Movie['Movie']['description']);?></td>                 
                    <td><?php print_r($Movie['Movie']['genre']);?></td>
-                   <td><?php print_r($Movie['Movie']['duration']);?></td>
+                   <td><?php print_r($Movie['Movie']['duration']);?></td>                   
                    <td><?php print_r($Movie['Movie']['abr']);?></td>                                     
                    <td>
                         <?php
@@ -66,7 +67,7 @@
              <?php unset($Movie); ?>
             <!-- Here is where we loop through our $posts array, printing out post info -->
         </table>
-            
+  </body>          
   <?php
 // Shows the next and previous links
 echo '<div id="prev_btn">';

@@ -17,13 +17,13 @@
                 <li> <?php echo $this->Html->link(__('Home'), array('controller' => 'movies', 'action' => 'index')); ?></li> 
                 <li class = active> <?php echo $this->Html->link(__('Add Movie'), array('controller' => 'movies', 'action' => 'add')); ?></li> 
                 <li > <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
-
+                 <li> <?php echo $this->Html->link(__('Featured Image'), array('controller' => 'MoviesContent', 'action' => 'displaymovies', 'featured_image')); ?></li>
             </ul>
         </div>       
 
         <h1>Enter the Movie details</h1>
         <?php
-        echo $this->Form->create('Movie',array('type'=>'file'));
+        echo $this->Form->create('Movie', array('type' => 'file'));
         echo $this->Form->input('Category Id', array(
             'default' => 7,
             'disabled' => 'disabled'
@@ -31,16 +31,34 @@
         echo $this->Form->input('Channel Id', array(
             //  'options' => array("IB3Media", 'IB3 Xclusive', 'IB3 Trailers', 'IB3 Presents: STAR WARS VII', 'The Automotive Channel'),
             'options' => array('IB3Media' => 'IB3Media', 'IB3 Xclusive' => 'IB3 Xclusive', 'IB3 Trailers' => 'IB3 Trailers', 'IB3 Presents: STAR WARS VII' => 'IB3 Presents: STAR WARS VII', 'The Automotive Channel' => 'The Automotive Channel', 'LifeHacks' => 'LifeHacks'),
-            'empty' => '(choose one)'
         ));
-
-        echo $this->Form->input('Title');
-        echo $this->Form->input('Type');
-        echo $this->Form->input('Description');
-        echo $this->Form->input('image_thumb', array('action' => 'upload', 'type' => 'file'));
-        echo $this->Form->input('Director');
-        echo $this->Form->input('Cast');
-        echo $this->Form->input('Genre');
+        echo $this->Form->input('Title', array(
+            'placeholder' => '-'
+        ));
+        echo $this->Form->input('Type', array(
+            'placeholder' => '-'
+        ));
+        echo $this->Form->input('Description', array(
+            'type' => 'textarea',
+            'rows' => '5', 'cols' => '4',
+            'placeholder' => '-'
+        ));
+        echo $this->Form->input('image_thumb', array(
+            'after' => '<p class = "note" >Maximum dimensions 200*200 <br> pixels.Only JPG format</p>',
+            'action' => 'upload',
+            'type' => 'file'
+        ));
+        echo $this->Form->input('Director', array(
+            'placeholder' => '-',
+        ));
+        echo $this->Form->input('Cast', array(
+            'type' => 'textarea',
+            'rows' => '2', 'cols' => '4',
+            'placeholder' => '-'         
+        ));
+        echo $this->Form->input('Genre', array(
+            'placeholder' => '-'
+        ));
         echo $this->Form->input('Tag', array(
             'default' => '-',
             'disabled' => 'disabled'
@@ -57,12 +75,16 @@
             'default' => '-',
             'disabled' => 'disabled'
         ));
-        echo $this->Form->input('Duration');
+        echo $this->Form->input('Duration', array(
+            'placeholder' => '-'
+        ));
         echo $this->Form->input('Cp', array(
             'default' => 'JJJ',
             'disabled' => 'disabled'
         ));
-        echo $this->Form->input('VideoLink');
+        echo $this->Form->input('VideoLink', array(
+            'placeholder' => '-'
+        ));
         echo $this->Form->input('Bundle Id', array(
             'default' => 1,
             'disabled' => 'disabled'
