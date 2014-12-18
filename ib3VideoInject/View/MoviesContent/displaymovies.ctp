@@ -17,6 +17,7 @@
                 <li> <?php echo $this->Html->link(__('Add Movie'), array('controller' => 'movies', 'action' => 'add')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
                 <li class = active>  <?php echo $this->Html->link(__('Featured Image'), array('controller' => 'MoviesContent', 'action' => 'displaymovies', 'featured_image')); ?></li>
+                <li> <?php echo $this->Html->link(__('Movies Free'), array('controller' => 'MoviesFree', 'action' => 'displaymoviesfree', 'movies_free')); ?></li>
             </ul>
         </div>
 
