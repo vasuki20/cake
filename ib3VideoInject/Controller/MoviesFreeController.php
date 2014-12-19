@@ -20,17 +20,23 @@ class MoviesFreeController extends AppController {
         )
     );
     var $uses = array('MoviesFree');
-
+   
     public function displaymoviesfree() {
-        $this->Paginator->settings = $this->paginate;
+         // print_r("Hi");
+       // $this->Paginator->settings = $this->paginate;
 // query database and sort results
-        //$data = $this->Movie->find('all', array('limit' => 100));
+        $data = $this->Movie->find('all', array('limit' => 100));
+        print_r($data);
+        
         $data = $this->Paginator->paginate('MoviesFree');
+        print_r($data);
+        print_r("hello");
         // Search Action// 
         $this->set('movies', $data);
 
 // get a count from the database
         $count = $this->MoviesFree->find('count');
+        print_r($count);
         $this->set('count', $count);
     }
 

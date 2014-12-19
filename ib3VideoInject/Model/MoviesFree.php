@@ -12,10 +12,10 @@ App::uses('AppModel', 'Model');
  * @author Teikpiew
  */
 class MoviesFree extends AppModel {
- 
+      var $name = 'MoviesFree';
     var $useDbConfig = 'default';
     var $useTable = 'movies_free';
-    var $primaryKey = 'id';
+   // var $primaryKey = 'id';
  
 }
 
