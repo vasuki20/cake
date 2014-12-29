@@ -11,38 +11,12 @@
     </head>
     <body>
         <div id='cssmenu'>
-
             <ul>
                 <li> <?php echo $this->Html->link(__('Home'), array('controller' => 'movies', 'action' => 'index')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Add Movie'), array('controller' => 'movies', 'action' => 'add')); ?></li> 
-                <li> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
-                <li class = active>  <?php echo $this->Html->link(__('Featured Image'), array('controller' => 'MoviesContent', 'action' => 'displaymovies', 'featured_image')); ?></li>
-                <li> <?php echo $this->Html->link(__('Movies Free'), array('controller' => 'MoviesContent', 'action' => 'displaymoviesfree','movies_free')); ?></li>
+                <li> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>                  
             </ul>
         </div>
-
-        <?php
-        echo $this->requestAction(
-                array('controller' => 'FeaturedImage',
-            'action' => 'displayfeaturedimage'), array('return')
-        );
-        ?>
-        <?php echo "<br><br>"; ?>  
-        <div style="margin-right: 10%;color: rgb(40, 60, 123); font-size: 150%;">
-            <ul>
-                <?php echo "Upload image to Featured Table" ?>
-            </ul>
-        </div>
-
-        <?php
-        echo $this->Form->create('MoviesContent');
-        echo '<div><div id="searchText" style="width: 40%;float:left;margin-top: 3px;margin-left: 70px;">';
-        echo $this->Form->input('SearchParam', array(placeholder => 'Search for movie title'));
-        echo '</div>';
-        echo '<div id="searchBtn" style="width:20%;float:left;clear: none;padding: 0;">';
-        echo $this->Form->end('Search');
-        echo '</div></div>';
-        ?>
         <?php
         if ($fromtablename == "movies_free") {
             $tableName = "Movies Free";
@@ -61,6 +35,23 @@
             $controller = "FeaturedImage";
             $action = "displayfeaturedimage";
         }
+        ?>
+        
+        <?php echo "<br><br>"; ?>  
+        <div style="margin-right: 10%;color: rgb(40, 60, 123); font-size: 150%;">
+            <ul>
+                <?php echo "Upload image to Featured Table" ?>
+            </ul>
+        </div>
+
+        <?php
+        echo $this->Form->create('MoviesContent');
+        echo '<div><div id="searchText" style="width: 40%;float:left;margin-top: 3px;margin-left: 70px;">';
+        echo $this->Form->input('SearchParam', array(placeholder => 'Search for movie title'));
+        echo '</div>';
+        echo '<div id="searchBtn" style="width:20%;float:left;clear: none;padding: 0;">';
+        echo $this->Form->end('Search');
+        echo '</div></div>';
         ?>
         <!-- Back to home -->
         <div style="margin-top: 8%;color: rgb(175, 10, 10);">

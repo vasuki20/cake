@@ -11,35 +11,31 @@
 App::uses('AppController', 'Controller');
 
 class MoviesFreeController extends AppController {
-
-    public $components = array('Paginator', 'Session');
-    public $paginate = array(
-        'limit' => 10,
-        'order' => array(
-            'MoviesFree.id' => 'asc'
-        )
-    );
     var $uses = array('MoviesFree');
-   
-    public function displaymoviesfree() {
-         // print_r("Hi");
-       // $this->Paginator->settings = $this->paginate;
-// query database and sort results
-        $data = $this->Movie->find('all', array('limit' => 100));
-        print_r($data);
+    public $components = array('Paginator', 'Session');
+//    public $paginate = array(
+//        'limit' => 10,
+//        'order' => array(
+//            'MoviesFree.id' => 'asc'
+//        )
+//    ); 
+    public function index() {
+        $this->autoRender = false;
+        print_r("inside index function");        
+        //$this->set('movies', $this->MoviesFree->find('all'));
+       // $post = $this->MoviesFree->findById($id);
+        print_r("before calling MoviesFree");
+        try {
+             $result = $this->MoviesFree->find('all');
+             print_r($result);
+             print_r("Success");
+        } catch (Exception $e) {
+            // do exception handling
+            print_r($e);
+            print_r("Exception");
+        }
+       
         
-        $data = $this->Paginator->paginate('MoviesFree');
-        print_r($data);
-        print_r("hello");
-        // Search Action// 
-        $this->set('movies', $data);
-
-// get a count from the database
-        $count = $this->MoviesFree->find('count');
-        print_r($count);
-        $this->set('count', $count);
-    }
-
 }
-
+}
 ?>

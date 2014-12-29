@@ -23,7 +23,6 @@ class FeaturedImageController extends AppController {
         $count = $this->FeaturedImage->find('count');
         $this->set('count', $count);
     }
-
     public function display() {
         if ($this->request->is('post')) {
             if ($this->data['Image']) {
@@ -34,8 +33,6 @@ class FeaturedImageController extends AppController {
                 $uploadFolder = "uploadimage";
                 //full path to upload folder
                 $uploadPath = "C:\xampp\htdocs\img" . $uploadFolder;
-
-
                 //check if image type fits one of allowed types
                 foreach ($imageTypes as $type) {
                     if ($type == $image['type']) {

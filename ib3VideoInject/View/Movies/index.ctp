@@ -1,5 +1,4 @@
 <!-- File: /app/View/Posts/add.ctp -->
-
 <!doctype html>
 <html lang=''>
     <head>
@@ -18,8 +17,8 @@
                 <li class = active> <?php echo $this->Html->link(__('Home'), array('controller' => 'movies', 'action' => 'index')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Add Movie'), array('controller' => 'movies', 'action' => 'add')); ?></li> 
                 <li> <?php echo $this->Html->link(__('Edit Movie'), array('controller' => 'movies', 'action' => 'edit')); ?></li>    
-                <li> <?php echo $this->Html->link(__('Featured Image'), array('controller' => 'MoviesContent', 'action' => 'displaymovies', 'featured_image')); ?></li>
-                <li> <?php echo $this->Html->link(__('Featured Image'), array('controller' => 'MoviesContent', 'action' => 'displaymovies', 'movies_free')); ?></li>
+                <li> <?php echo $this->Html->link(__('Featured Image'), array('controller' => 'MoviesFree', 'action' => 'displayfeaturedimage')); ?></li>
+                <li> <?php echo $this->Html->link(__('Movies Free'), array('controller' => 'MoviesContent', 'action' => 'displaymoviesfree')); ?></li>
             </ul>
         </div>
         <div class="layout">
