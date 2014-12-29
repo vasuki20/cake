@@ -87,7 +87,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost:3307',
 		'login' => 'root',
 		'password' => 'root',
-		'database' => 'ib3_fetch',
+		'database' => 'ib3master',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

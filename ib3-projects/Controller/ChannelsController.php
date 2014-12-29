@@ -9,7 +9,7 @@ App::uses('AppController', 'Controller');
  */
 class ChannelsController extends AppController {
 
-    var $uses = array('Searchvideo','Vod_Detail');
+    var $uses = array('Vod_Detail');
 
     public function index() {
 

@@ -14,9 +14,10 @@
             <ul>
                 <li class = active> <?php echo $this->Html->link(__('Search by Keyword'), array('controller' => 'ib3parsers', 'action' => 'index')); ?></li>
                 <li> <?php echo $this->Html->link(__('Search by Channel'), array('controller' => 'channels', 'action' => 'index')); ?></li>
+                 <li> <?php echo $this->Html->link(__('Channels List'), array('controller' => 'addchannels', 'action' => 'index')); ?></li>
             </ul>
         </div>
-    </body>
+  
 </html>
 <?php
 echo $this->Form->create();
@@ -189,6 +190,7 @@ if (isset($tableDatas)):
 
         <?php endforeach; ?>
         <?php unset($tableData); ?>
+              </body>
     </table>
 
         <?php

@@ -1,5 +1,24 @@
 <!-- File: /app/View/Posts/add.ctp -->
 
+<!doctype html>
+<html lang=''>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="script.js"></script>
+        <title>CSS MenuMaker</title>
+    </head>
+    <body>
+        <div id='cssmenu'>
+            <ul>
+                <li> <?php echo $this->Html->link(__('Edit'), array('controller' => 'movies', 'action' => 'edit')); ?></li>               
+                <li class = active> <?php echo $this->Html->link(__('Delete'), array('action' => 'delete')); ?></li>
+            </ul>
+        </div>
+        
 <h1>Enter the Movie details</h1>
 
 <?php
@@ -10,7 +29,7 @@ echo $this->Form->input('Category Id',array(
         ));
 echo $this->Form->input('Channel Id',array(
   //  'options' => array("IB3Media", 'IB3 Xclusive', 'IB3 Trailers', 'IB3 Presents: STAR WARS VII', 'The Automotive Channel'),
-      'options' => array('IB3Media' => 'IB3Media', 'IB3 Xclusive' => 'IB3 Xclusive', 'IB3 Trailers' => 'IB3 Trailers', 'IB3 Presents: STAR WARS VII' => 'IB3 Presents: STAR WARS VII'),
+      'options' => array('IB3Media' => 'IB3Media', 'IB3 Xclusive' => 'IB3 Xclusive', 'IB3 Trailers' => 'IB3 Trailers', 'IB3 Presents: STAR WARS VII' => 'IB3 Presents: STAR WARS VII',''),
     'empty' => '(choose one)'
     ));
 

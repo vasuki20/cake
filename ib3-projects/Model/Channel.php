@@ -1,8 +1,8 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+App::uses('AppModel', 'Model');
+class Channel extends AppModel {
+    var $name = 'Channel';
+    var $useDbConfig = 'video';
+    var $useTable = 'vod_details';   
+}
+?>

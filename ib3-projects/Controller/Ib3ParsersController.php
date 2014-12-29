@@ -9,18 +9,14 @@ App::uses('AppController', 'Controller');
  */
 class Ib3ParsersController extends AppController {
 
-    public $apiPath = 'C:\xampp\htdocs\google-api-php-client-master';
+    public $apiPath = 'C:\xampp\php\google-api-php-client-master';
     public $DEVELOPER_KEY = 'AIzaSyAcWCerpP1AerBZmGKF13_-qNPX_QOWK34';
     public $helpers = array('Html', 'Form');
     var $uses = array('Vod_Detail');
 
     public function index() {
-        
-      
-
         require_once $this->apiPath.'\src\Google\Client.php';
         require_once $this->apiPath.'\src\Google\Service\YouTube.php';
-
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * Google Developers Console <https://console.developers.google.com/>
