@@ -10,9 +10,7 @@
         <title>CSS MenuMaker</title>
     </head>
     <body>
-
         <div id='cssmenu'>
-
             <ul>
                 <li> <?php echo $this->Html->link(__('Search by Keyword'), array('controller' => 'ib3parsers', 'action' => 'index')); ?></li>
                 <li> <?php echo $this->Html->link(__('Search by Channel'), array('controller' => 'channels', 'action' => 'index')); ?></li>
@@ -20,7 +18,6 @@
                  
             </ul>
         </div>
-
 <?php
 echo $this->Form->create();
 echo $this->Form->input('ChannelName',array(
@@ -38,7 +35,7 @@ echo $this->Form->input('ChannelName',array(
 
 echo $this->Form->end('Search');
 ?>
-        <?php //print_r($channelsResponses);?>
+        <?php// print_r(isset($channelsResponses));?>
         <?php // print_r($channelsResponses[0]['id']); ?>
         <table>
             <tr>
@@ -47,32 +44,24 @@ echo $this->Form->end('Search');
                 <th>Add</th>
             </tr>           
                 <tr>
-                    <td><?php print_r($channelsResponses[0]['id']); ?></td>
-                    <td><?php print_r($channelsResponses[0]['snippet']['title']); ?></td>                  
+                    <td><?php if(isset($channelsResponses))
+                    {
+                        print_r($channelsResponses[0]['id']); 
+                    }
+                        ?></td>
+                    <td><?php if(isset($channelsResponses))
+                    print_r($channelsResponses[0]['snippet']['title']); ?></td>                  
                     <td>
-                        <?php
-                        echo $this->Html->link('Add', array('controller' => 'addchannels', 'action' => 'add')); ?>                         
+                        <?php if(isset($channelsResponses))
+                        {
+                        echo $this->Html->link('Add', array('controller' => 'addchannels', 'action' => 'add' , 
+                            '?' => array('id' => $channelsResponses[0]['id'], 'title' => $channelsResponses[0]['snippet']['title']))); 
+                        }
+                        ?>                         
                     </td>                  
                 </tr>         
             <!-- Here is where we loop through our $posts array, printing out post info -->
         </table>
-        <?php
-// Shows the next and previous links
-        echo '<div id="prev_btn">';
-        echo $this->Paginator->prev(
-                '« Previous', null, null, array('class' => 'disabled')
-        );
-        echo '</div>';
-        echo '<div id="page_numbers">';
-// Shows the page numbers
-        echo $this->Paginator->numbers();
-        echo '</div>';
-        echo '<div id="next_btn">';
-
-        echo $this->Paginator->next(
-                'Next »', null, null, array('class' => 'disabled')
-        );
-        echo '</div>';
-        ?>
+        
     </body>
 </html>

@@ -18,8 +18,8 @@ class AddChannelsController extends AppController {
 
     public function index() {
 
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * Google Developers Console <https://console.developers.google.com/>
@@ -65,18 +65,25 @@ class AddChannelsController extends AppController {
 //
         }
     }
-    public function add($id,$title) {
-        if ($this->request->is('post')) {
-            print_r($this->request->is);
-            $this->AddChannel->create();
-            //    $this->log($this->request->data['WhiteList']['value'], 'debug');
-           if ($this->AddChannel->save($this->request->data)) {
-                $this->Session->setFlash(__('Your User has been saved.'));
-                return $this->redirect(array('action' => 'blacklist'));
-            }
-            $this->Session->setFlash(__('Unable to add your User.'));
+    public function add($id=null, $title=null) {
+        $id = $this->request->query('id');
+        $title = $this->request->query('title');
+        // print_r($id);
+        // print_r($title);
+        $this->AddChannel->create();
+        // $this->log($this->request->data['WhiteList']['value'], 'debug');
+        $insert_data = array("AddChannel" => array(
+                "channelId" => $id,
+                "channelTitle" => $title,
+            )
+        );
+        /* save values into DB */
+        if ($this->AddChannel->save($insert_data)) {
+            $this->Session->setFlash(__('Your channel has been saved.'));
+            return $this->redirect(array('action' => 'index'));
         }
-    } 
+        $this->Session->setFlash(__('Unable to add your User.'));
+    }
 
 }
 
