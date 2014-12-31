@@ -25,14 +25,6 @@ echo $this->Form->input('ChannelName',array(
     'name'=> 'q',
     'placeholder'=>'Enter Search Term'
 ));
-//
-//echo $this->Form->input('MaxResults', array(
-//    'id' => 'maxResults',
-//    'name' => 'maxResults',
-//    'type' => 'select',
-//    'options' => array_combine(range(10, 100, 10), range(10, 100, 10))
-//));
-
 echo $this->Form->end('Search');
 ?>
         <?php// print_r(isset($channelsResponses));?>
@@ -59,9 +51,18 @@ echo $this->Form->end('Search');
                         }
                         ?>                         
                     </td>                  
-                </tr>         
-            <!-- Here is where we loop through our $posts array, printing out post info -->
-        </table>
-        
+                </tr>                 
+        </table><br> </br>        
+         <h1>Channel table details</h1> 
+          <table>
+            <tr>
+                <th>Channel ID</th>
+                <th>Channel Title</th>               
+            </tr>  
+            </table>
+            <?php print_r($Lists);?>
+              <?php foreach ($Lists as $List): ?>
+         <?php endforeach; ?>
+             <?php unset($Lists); ?>
     </body>
 </html>

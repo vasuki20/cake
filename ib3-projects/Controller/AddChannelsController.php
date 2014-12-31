@@ -18,8 +18,8 @@ class AddChannelsController extends AppController {
 
     public function index() {
 
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Client.php';
-        require_once 'C:\xampp\htdocs\google-api-php-client-master\src\Google\Service\YouTube.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
+        require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
         /*
          * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
          * Google Developers Console <https://console.developers.google.com/>
@@ -46,43 +46,58 @@ class AddChannelsController extends AppController {
             // print_r($channelsResponse);
 
             $channelId = $channelsResponse[0]['id'];
-            print_r($channelId);
+            //rint_r($channelId);
             $channelTitle = $channelsResponse[0]['snippet']['title'];
-            print_r($channelTitle);
+            // print_r($channelTitle);
             $this->set('channelsResponses', $channelsResponse);
-
-
-//    private function isDuplicate($videoId) { // Checking Duplicate using video ID
-//        //   print_r($videoId);
-//        $count = $this->Vod_Detail->find('count', array(
-//            'conditions' => array(
-//                array('id_videoId' => $videoId),
-//            //  array('published' => '0'),
-//            )
-//        ));
-//        return $count;
-//    }
-//
+            $this->channelTable($count);
         }
     }
-    public function add($id=null, $title=null) {
+
+    public function add($id = null, $title = null) {
         $id = $this->request->query('id');
         $title = $this->request->query('title');
-        // print_r($id);
-        // print_r($title);
-        $this->AddChannel->create();
-        // $this->log($this->request->data['WhiteList']['value'], 'debug');
-        $insert_data = array("AddChannel" => array(
-                "channelId" => $id,
-                "channelTitle" => $title,
-            )
-        );
+        /* checks duplication using channel id */
+        $count = $this->isDuplicate($id);
+        if ($count == 0) {
+            $this->AddChannel->create();
+            $insert_data = array("AddChannel" => array(
+                    "channelId" => $id,
+                    "channelTitle" => $title,
+                )
+            );
+        } else {
+            $this->Session->setFlash(__('Channel name already exist.'));
+            return $this->redirect(array('action' => 'index'));
+        }
         /* save values into DB */
         if ($this->AddChannel->save($insert_data)) {
             $this->Session->setFlash(__('Your channel has been saved.'));
             return $this->redirect(array('action' => 'index'));
         }
-        $this->Session->setFlash(__('Unable to add your User.'));
+        $this->Session->setFlash(__('Unable to add your channel name.'));
+        
+    }
+    
+    public function channelTable() {    
+   //     $this->log('hi', 'debug');
+       $count=  $this->AddChannel->find('count', array(
+            'conditions' => array(
+                array('channelId' => $id),
+                )));
+               return $count;
+     //   $this->log($data, 'debug');
+
+    }
+
+    private function isDuplicate($id) { // Checking Duplicate using Channel ID
+        $count = $this->AddChannel->find('count', array(
+            'conditions' => array(
+                array('channelId' => $id),
+            //  array('published' => '0'),
+            )
+        ));
+        return $count;
     }
 
 }
