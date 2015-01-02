@@ -44,21 +44,20 @@ class AddChannelsController extends AppController {
                     //  'maxResults' => $this->request->data['maxResults'],
             ));
             // print_r($channelsResponse);
-
             $channelId = $channelsResponse[0]['id'];
             //rint_r($channelId);
             $channelTitle = $channelsResponse[0]['snippet']['title'];
             // print_r($channelTitle);
-            $this->set('channelsResponses', $channelsResponse);
-            $this->channelTable($count);
+            $this->set('channelsResponses', $channelsResponse);        
+            $this->channelTable(); 
         }
     }
-
     public function add($id = null, $title = null) {
         $id = $this->request->query('id');
         $title = $this->request->query('title');
         /* checks duplication using channel id */
         $count = $this->isDuplicate($id);
+        echo"hello";
         if ($count == 0) {
             $this->AddChannel->create();
             $insert_data = array("AddChannel" => array(
@@ -77,19 +76,20 @@ class AddChannelsController extends AppController {
         }
         $this->Session->setFlash(__('Unable to add your channel name.'));
         
+        //  $this->log('hi', 'debug');
+          
+    }    
+        public function channelTable() {    
+        $this->Paginator->settings = array(
+            'limit' => 10
+        );
+       // $data = $this->Paginator->paginate('AddChannel'); 
+       $model= $this->AddChannel->recursive = 0;
+       print_r($model);
+       $data1 = $this->set('posts', $this->AddChannel->find('all'));      
+       print_r($data1);  
+       
     }
-    
-    public function channelTable() {    
-   //     $this->log('hi', 'debug');
-       $count=  $this->AddChannel->find('count', array(
-            'conditions' => array(
-                array('channelId' => $id),
-                )));
-               return $count;
-     //   $this->log($data, 'debug');
-
-    }
-
     private function isDuplicate($id) { // Checking Duplicate using Channel ID
         $count = $this->AddChannel->find('count', array(
             'conditions' => array(
@@ -99,7 +99,6 @@ class AddChannelsController extends AppController {
         ));
         return $count;
     }
-
 }
 
 ?>
