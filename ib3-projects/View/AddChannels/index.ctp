@@ -17,8 +17,7 @@
                 <li class = active> <?php echo $this->Html->link(__('Channels List'), array('controller' => 'addchannels', 'action' => 'index')); ?></li>
 
             </ul>
-        </div>
-       <?php echo $this->element('sql_dump');?>
+        </div>     
         <?php
         echo $this->Form->create();
         echo $this->Form->input('ChannelName', array(
@@ -64,5 +63,7 @@
         </table>
         <?php //foreach ($posts as $post): ?>
         <?php //endforeach; ?>
+        
     </body>
 </html>
+ <?php echo $this->element('sql_dump');?>

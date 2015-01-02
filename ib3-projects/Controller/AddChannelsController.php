@@ -48,10 +48,13 @@ class AddChannelsController extends AppController {
             //rint_r($channelId);
             $channelTitle = $channelsResponse[0]['snippet']['title'];
             // print_r($channelTitle);
-            $this->set('channelsResponses', $channelsResponse);        
-            $this->channelTable(); 
+            $this->set('channelsResponses', $channelsResponse);
+            echo"hello";
+            $this->channelTable();
+            echo"hi";
         }
     }
+
     public function add($id = null, $title = null) {
         $id = $this->request->query('id');
         $title = $this->request->query('title');
@@ -75,21 +78,21 @@ class AddChannelsController extends AppController {
             return $this->redirect(array('action' => 'index'));
         }
         $this->Session->setFlash(__('Unable to add your channel name.'));
-        
+
         //  $this->log('hi', 'debug');
-          
-    }    
-        public function channelTable() {    
+    }
+
+    public function channelTable() {
         $this->Paginator->settings = array(
             'limit' => 10
         );
-       // $data = $this->Paginator->paginate('AddChannel'); 
-       $model= $this->AddChannel->recursive = 0;
-       print_r($model);
-       $data1 = $this->set('posts', $this->AddChannel->find('all'));      
-       print_r($data1);  
-       
+        // $data = $this->Paginator->paginate('AddChannel'); 
+        //$model= $this->AddChannel->recursive = 0;
+        // print_r($model);
+        $data1 = $this->set('posts', $this->AddChannel->find('all'));
+        print_r($data1);
     }
+
     private function isDuplicate($id) { // Checking Duplicate using Channel ID
         $count = $this->AddChannel->find('count', array(
             'conditions' => array(
@@ -99,6 +102,7 @@ class AddChannelsController extends AppController {
         ));
         return $count;
     }
+
 }
 
 ?>
