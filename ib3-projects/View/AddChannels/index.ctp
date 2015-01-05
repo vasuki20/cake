@@ -41,7 +41,8 @@
                         print_r($channelsResponses[0]['id']);
                     }
                     ?></td>
-                <td><?php if (isset($channelsResponses))
+                <td><?php
+                    if (isset($channelsResponses))
                         print_r($channelsResponses[0]['snippet']['title']);
                     ?></td>                  
                 <td>
@@ -53,17 +54,32 @@
                     ?>                         
                 </td>                  
             </tr>                 
-        </table><br> </br>        
+        </table><br></br>        
         <h1>Channel table details</h1> 
         <table>
             <tr>
                 <th>Channel ID</th>
-                <th>Channel Title</th>               
+                <th>Channel Title</th>                
+                <th>Delete</th>
             </tr>  
-        </table>
-        <?php //foreach ($posts as $post): ?>
-        <?php //endforeach; ?>
-        
+            <?php foreach ($posts as $post): ?>
+                <tr>
+                    <td>
+                        <?php print_r($post['AddChannel']['channelId']); ?>
+                    </td>
+                    <td>
+                        <?php print_r($post['AddChannel']['channelTitle']); ?>
+                    </td>                    
+                    <td>
+                        <?php
+                        echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $post['AddChannel']['channelId']), null, __('Are you sure you want to delete # %s?', $post['AddChannel']['channelTitle']));
+                        ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            <?php unset($post); ?>
+        </table>   
     </body>
 </html>
- <?php echo $this->element('sql_dump');?>
+<?php
+//echo $this->element('sql_dump'); ?>

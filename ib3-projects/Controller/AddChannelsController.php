@@ -17,7 +17,7 @@ class AddChannelsController extends AppController {
     public $uses = array('AddChannel'); // use this when model and controller name are different
 
     public function index() {
-
+        // $this->layout = $this->autoRender = false;
         require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Client.php';
         require_once 'C:\xampp\php\google-api-php-client-master\src\Google\Service\YouTube.php';
         /*
@@ -37,6 +37,13 @@ class AddChannelsController extends AppController {
         // Call the search.list method to retrieve results matching the specified
         // query term.
 //        $videoDefinition="high";
+        // $data = $this->Paginator->paginate('AddChannel'); 
+        //$model= $this->AddChannel->recursive = 0;
+        // print_r($model);
+        $data1 = $this->AddChannel->find('all');
+        $this->set('posts', $data1);
+        // print_r($data1);
+        //   echo"hi";
         if ($this->request->data && $this->request->data['q']) {
 
             $channelsResponse = $youtube->channels->listChannels('id,snippet', array(
@@ -50,8 +57,10 @@ class AddChannelsController extends AppController {
             // print_r($channelTitle);
             $this->set('channelsResponses', $channelsResponse);
             echo"hello";
-            $this->channelTable();
-            echo"hi";
+            //$this->channelTable();
+            $this->Paginator->settings = array(
+                'limit' => 10
+            );
         }
     }
 
@@ -82,15 +91,19 @@ class AddChannelsController extends AppController {
         //  $this->log('hi', 'debug');
     }
 
-    public function channelTable() {
-        $this->Paginator->settings = array(
-            'limit' => 10
-        );
-        // $data = $this->Paginator->paginate('AddChannel'); 
-        //$model= $this->AddChannel->recursive = 0;
-        // print_r($model);
-        $data1 = $this->set('posts', $this->AddChannel->find('all'));
-        print_r($data1);
+    public function delete($id) {
+        print_r($id);
+        print_r('Inside delete');
+        if ($this->request->is('get')) {
+            throw new MethodNotAllowedException();
+        }
+
+        if ($this->AddChannel->delete(array('Comment.channelId' => $id))) {
+            $this->Session->setFlash(
+                    __('The post with id: %s has been deleted.', h($id))
+            );
+            return $this->redirect(array('action' => 'index'));
+        }
     }
 
     private function isDuplicate($id) { // Checking Duplicate using Channel ID
